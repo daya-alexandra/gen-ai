@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+*.tmp
+tmp*/
+lab2_results.zip
+output/budget.json
