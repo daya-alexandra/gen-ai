@@ -1,0 +1,602 @@
+[
+  {
+    "full_name": "Тихомирова Валерия Андреевна",
+    "age": 34,
+    "address": {
+      "city": "Нижний Новгород",
+      "district": "Сормовский район"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Мельникова Ольга Викторовна",
+    "age": 34,
+    "address": {
+      "city": "Екатеринбург",
+      "district": "Верх-Исетский район"
+    },
+    "speciality": "Маркетолог",
+    "desired_course": "Цифровой маркетинг",
+    "years_of_experience": 11,
+    "graduation_year": 2013
+  },
+  {
+    "full_name": "Ковалёв Дмитрий Сергеевич",
+    "age": 34,
+    "address": {
+      "city": "Воронеж",
+      "district": "Коминтерновский район"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 11,
+    "graduation_year": 2013
+  },
+  {
+    "full_name": "Соколова Марина Владимировна",
+    "age": 34,
+    "address": {
+      "city": "Санкт-Петербург",
+      "district": "Приморский район"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Гилязов Ренат Ильдарович",
+    "age": 34,
+    "address": {
+      "city": "Казань",
+      "district": "Вахитовский район"
+    },
+    "speciality": "Менеджер по персоналу",
+    "desired_course": "Управление персоналом",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Беляева Татьяна Николаевна",
+    "age": 41,
+    "address": {
+      "city": "Нижний Новгород",
+      "district": "Сормовский район"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 18,
+    "graduation_year": 2007
+  },
+  {
+    "full_name": "Ткаченко Ирина Павловна",
+    "age": 34,
+    "address": {
+      "city": "Самара",
+      "district": "Промышленный район"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Мельникова Ольга Викторовна",
+    "age": 38,
+    "address": {
+      "city": "Воронеж",
+      "district": "Коминтерновский район"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 15,
+    "graduation_year": 2010
+  },
+  {
+    "full_name": "Ковалёв Дмитрий Сергеевич",
+    "age": 34,
+    "address": {
+      "city": "Воронеж",
+      "district": "Коминтерновский"
+    },
+    "speciality": "Программист",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Смирнова Елена Владимировна",
+    "age": 34,
+    "address": {
+      "city": "Самара",
+      "district": "Промышленный район"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Никитина Светлана Анатольевна",
+    "age": 34,
+    "address": {
+      "city": "Санкт-Петербург",
+      "district": "Приморский район"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Управление проектами",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Громова Татьяна Николаевна",
+    "age": 38,
+    "address": {
+      "city": "Санкт-Петербург",
+      "district": "Приморский район"
+    },
+    "speciality": "Экономист",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 15,
+    "graduation_year": 2010
+  },
+  {
+    "full_name": "Баранов Алексей Петрович",
+    "age": 38,
+    "address": {
+      "city": "Новосибирск",
+      "district": "Заельцовский"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Управление проектами",
+    "years_of_experience": 15,
+    "graduation_year": 2010
+  },
+  {
+    "full_name": "Харитонов Павел Андреевич",
+    "age": 34,
+    "address": {
+      "city": "Екатеринбург",
+      "district": "Железнодорожный"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Управление проектами",
+    "years_of_experience": 12,
+    "graduation_year": 2013
+  },
+  {
+    "full_name": "Кузнецова Ольга Сергеевна",
+    "age": 34,
+    "address": {
+      "city": "Воронеж",
+      "district": "Коминтерновский район"
+    },
+    "speciality": "Экономист",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 11,
+    "graduation_year": 2013
+  },
+  {
+    "full_name": "Тарасов Дмитрий Владимирович",
+    "age": 34,
+    "address": {
+      "city": "Красноярск",
+      "district": "Свердловский район"
+    },
+    "speciality": "Инженер",
+    "desired_course": "Python для автоматизации",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Соколова Марина Викторовна",
+    "age": 34,
+    "address": {
+      "city": "Москва",
+      "district": "Басманный"
+    },
+    "speciality": "Маркетолог",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Гилязова Алия Ринатовна",
+    "age": 34,
+    "address": {
+      "city": "Казань",
+      "district": "Вахитовский район"
+    },
+    "speciality": "Менеджер по персоналу",
+    "desired_course": "Управление персоналом",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Мельникова Татьяна Борисовна",
+    "age": 41,
+    "address": {
+      "city": "Нижний Новгород",
+      "district": "Автозаводский район"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 19,
+    "graduation_year": 2005
+  },
+  {
+    "full_name": "Шестакова Ирина Валерьевна",
+    "age": 34,
+    "address": {
+      "city": "Москва",
+      "district": "Басманный"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Ковалёв Артём Сергеевич",
+    "age": 34,
+    "address": {
+      "city": "Екатеринбург",
+      "district": "Академический"
+    },
+    "speciality": "Маркетолог",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Тарасов Дмитрий Владимирович",
+    "age": 34,
+    "address": {
+      "city": "Красноярск",
+      "district": "Свердловский район"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Управление проектами",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Соколова Марина Андреевна",
+    "age": 34,
+    "address": {
+      "city": "Екатеринбург",
+      "district": "Верх-Исетский"
+    },
+    "speciality": "Маркетолог",
+    "desired_course": "Цифровой маркетинг",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Кузнецова Ольга Петровна",
+    "age": 41,
+    "address": {
+      "city": "Красноярск",
+      "district": "Центральный район"
+    },
+    "speciality": "Менеджер по персоналу",
+    "desired_course": "Управление персоналом",
+    "years_of_experience": 18,
+    "graduation_year": 2007
+  },
+  {
+    "full_name": "Никитина Светлана Алексеевна",
+    "age": 34,
+    "address": {
+      "city": "Санкт-Петербург",
+      "district": "Приморский район"
+    },
+    "speciality": "Маркетолог",
+    "desired_course": "Цифровой маркетинг",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Белов Максим Олегович",
+    "age": 34,
+    "address": {
+      "city": "Москва",
+      "district": "Хорошёвский"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Панкратов Игорь Валентинович",
+    "age": 47,
+    "address": {
+      "city": "Красноярск",
+      "district": "Свердловский район"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Управление проектами",
+    "years_of_experience": 23,
+    "graduation_year": 2001
+  },
+  {
+    "full_name": "Тарасов Дмитрий Сергеевич",
+    "age": 34,
+    "address": {
+      "city": "Москва",
+      "district": "Хорошёвский"
+    },
+    "speciality": "Маркетолог",
+    "desired_course": "Цифровой маркетинг",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Родионова Елена Владимировна",
+    "age": 38,
+    "address": {
+      "city": "Новосибирск",
+      "district": "Кировский район"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 15,
+    "graduation_year": 2010
+  },
+  {
+    "full_name": "Шестакова Ирина Николаевна",
+    "age": 34,
+    "address": {
+      "city": "Новосибирск",
+      "district": "Кировский район"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Кузнецова Ольга Петровна",
+    "age": 34,
+    "address": {
+      "city": "Самара",
+      "district": "Промышленный район"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Ершова Наталья Викторовна",
+    "age": 29,
+    "address": {
+      "city": "Самара",
+      "district": "Промышленный район"
+    },
+    "speciality": "Маркетолог",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 7,
+    "graduation_year": 2019
+  },
+  {
+    "full_name": "Соколова Марина Анатольевна",
+    "age": 41,
+    "address": {
+      "city": "Новосибирск",
+      "district": "Заельцовский район"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 18,
+    "graduation_year": 2006
+  },
+  {
+    "full_name": "Галеева Алия Ренатовна",
+    "age": 34,
+    "address": {
+      "city": "Казань",
+      "district": "Ново-Савиновский район"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Тихонов Андрей Сергеевич",
+    "age": 34,
+    "address": {
+      "city": "Екатеринбург",
+      "district": "Верх-Исетский район"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Мельникова Ирина Вячеславовна",
+    "age": 41,
+    "address": {
+      "city": "Воронеж",
+      "district": "Коминтерновский"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 18,
+    "graduation_year": 2007
+  },
+  {
+    "full_name": "Шевченко Ольга Петровна",
+    "age": 41,
+    "address": {
+      "city": "Краснодар",
+      "district": "Прикубанский округ"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 18,
+    "graduation_year": 2007
+  },
+  {
+    "full_name": "Ковалёв Дмитрий Александрович",
+    "age": 34,
+    "address": {
+      "city": "Новосибирск",
+      "district": "Заельцовский район"
+    },
+    "speciality": "Программист",
+    "desired_course": "Python для автоматизации",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Бондаренко Наталья Викторовна",
+    "age": 38,
+    "address": {
+      "city": "Краснодар",
+      "district": "Прикубанский округ"
+    },
+    "speciality": "Менеджер по персоналу",
+    "desired_course": "Управление персоналом",
+    "years_of_experience": 14,
+    "graduation_year": 2010
+  },
+  {
+    "full_name": "Гриценко Павел Олегович",
+    "age": 34,
+    "address": {
+      "city": "Краснодар",
+      "district": "Прикубанский округ"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Лапшин Виктор Станиславович",
+    "age": 47,
+    "address": {
+      "city": "Нижний Новгород",
+      "district": "Сормовский район"
+    },
+    "speciality": "Инженер",
+    "desired_course": "Управление проектами",
+    "years_of_experience": 24,
+    "graduation_year": 2001
+  },
+  {
+    "full_name": "Сафина Гульнара Ильдаровна",
+    "age": 34,
+    "address": {
+      "city": "Казань",
+      "district": "Вахитовский район"
+    },
+    "speciality": "Менеджер по персоналу",
+    "desired_course": "Управление персоналом",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Терентьева Ольга Сергеевна",
+    "age": 34,
+    "address": {
+      "city": "Самара",
+      "district": "Промышленный район"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 12,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Мельникова Татьяна Алексеевна",
+    "age": 34,
+    "address": {
+      "city": "Красноярск",
+      "district": "Свердловский район"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Хайруллин Ринат Ильгизович",
+    "age": 34,
+    "address": {
+      "city": "Казань",
+      "district": "Приволжский район"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Кузнецова Елена Владимировна",
+    "age": 29,
+    "address": {
+      "city": "Нижний Новгород",
+      "district": "Советский район"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 7,
+    "graduation_year": 2019
+  },
+  {
+    "full_name": "Гончаров Виктор Петрович",
+    "age": 47,
+    "address": {
+      "city": "Краснодар",
+      "district": "Прикубанский округ"
+    },
+    "speciality": "Специалист по логистике",
+    "desired_course": "Управление проектами",
+    "years_of_experience": 22,
+    "graduation_year": 2003
+  },
+  {
+    "full_name": "Соколова Марина Андреевна",
+    "age": 29,
+    "address": {
+      "city": "Санкт-Петербург",
+      "district": "Приморский район"
+    },
+    "speciality": "Маркетолог",
+    "desired_course": "Анализ данных",
+    "years_of_experience": 6,
+    "graduation_year": 2019
+  },
+  {
+    "full_name": "Панасенко Ольга Сергеевна",
+    "age": 34,
+    "address": {
+      "city": "Краснодар",
+      "district": "Прикубанский округ"
+    },
+    "speciality": "Менеджер по персоналу",
+    "desired_course": "Управление персоналом",
+    "years_of_experience": 11,
+    "graduation_year": 2014
+  },
+  {
+    "full_name": "Титова Наталья Валерьевна",
+    "age": 38,
+    "address": {
+      "city": "Москва",
+      "district": "Басманный"
+    },
+    "speciality": "Бухгалтер",
+    "desired_course": "Финансовый анализ",
+    "years_of_experience": 16,
+    "graduation_year": 2010
+  }
+]

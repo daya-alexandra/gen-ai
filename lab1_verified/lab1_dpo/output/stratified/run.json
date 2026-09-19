@@ -1,0 +1,26 @@
+{
+  "run_id": "ff05fa24-0d74-4097-9e7b-4c9f7f379e11",
+  "run_kind": "llm_api",
+  "config": {
+    "strategy": "stratified",
+    "seed": 42,
+    "temperature": 0.8,
+    "model": "deepseek-flash",
+    "count": 50,
+    "reference_year": 2026,
+    "max_retries": 3,
+    "max_tokens": 1200,
+    "code": {
+      "schema.py": "616926f129ce163a69f5072604fdbcdfd58ee461726f2f1cb55f880f9c02823e",
+      "prompts.py": "7c09f32547a27dfad14093ac913e7113a2e4bade59054ff34348ad9db1121e31",
+      "generator.py": "082bd8b8ae725d873c9b462e2fc7176e09f488ed3d4049694baa8a0b6ffd8983",
+      "llm_client.py": "4f15564e292e9983f64528634fafe31568db91973227b4beda5135a2efdc7545"
+    }
+  },
+  "started_at": "2026-09-19T10:15:05.584511+00:00",
+  "status": "complete",
+  "source": "LLM API",
+  "finished_at": "2026-09-19T10:16:00.654142+00:00",
+  "accepted": 50,
+  "execution_seconds": 55.068
+}
