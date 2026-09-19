@@ -105,10 +105,26 @@ class Lab2Tests(unittest.TestCase):
     def test_budget_blocks_before_request(self):
         fake = FakeAPI()
         with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, {'LLM_BUDGET_USD': '0'}):
-            run = Run(d, {}, transport=fake)
+            project = Path(d) / 'project'
+            project.mkdir()
+            (project / '.env').write_text('LLM_BUDGET_USD=1\n', encoding='utf-8')
+            with patch('llm_client.ROOT', project):
+                run = Run(Path(d) / 'output', {}, transport=fake)
             with self.assertRaises(RuntimeError):
                 run.create(stage='unit', messages=[{'role':'user','content':'[]'}], response_model=Reviews)
             self.assertEqual(fake.calls, 0)
+            self.assertEqual(os.environ['LLM_BUDGET_USD'], '0')
+
+    def test_live_run_still_loads_dotenv_without_request(self):
+        with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, {'LLM_BUDGET_USD': '0'}):
+            project = Path(d) / 'project'
+            project.mkdir()
+            (project / '.env').write_text('LLM_BUDGET_USD=0.25\n', encoding='utf-8')
+            with patch('llm_client.ROOT', project):
+                run = Run(Path(d) / 'output', {})
+            self.assertEqual(os.environ['LLM_BUDGET_USD'], '0.25')
+            self.assertEqual(run.config['run_kind'], 'llm_api')
+            self.assertIsNone(run.raw)
 
     def test_api_error_is_not_retried_or_leaked(self):
         calls = []

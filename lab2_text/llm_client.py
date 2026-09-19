@@ -64,12 +64,14 @@ class GroundingError(ValueError):
 
 class Run:
     def __init__(self, output, config, transport=None):
-        try:
-            from dotenv import load_dotenv
-            load_dotenv(ROOT.parent / '.env')
-            load_dotenv(ROOT / '.env', override=True)
-        except ImportError:
-            if transport is None:
+        # Тестовый транспорт использует только явно заданное окружение.
+        # Локальный .env не должен подменять лимиты теста или загружать его ключ.
+        if transport is None:
+            try:
+                from dotenv import load_dotenv
+                load_dotenv(ROOT.parent / '.env')
+                load_dotenv(ROOT / '.env', override=True)
+            except ImportError:
                 raise RuntimeError('Установи зависимости из requirements.txt') from None
         self.output = Path(output)
         self.output.mkdir(parents=True, exist_ok=True)
