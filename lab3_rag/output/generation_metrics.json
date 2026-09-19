@@ -1,0 +1,16 @@
+{
+  "run_kind": "llm_api",
+  "answer_count": 60,
+  "api_responses": 61,
+  "validation_error_responses": 1,
+  "quote_checks": 138,
+  "ghost_quote_checks": 0,
+  "abstentions": 16,
+  "prompt_tokens": 144056,
+  "completion_tokens": 17558,
+  "observed_cost_interval_usd": [
+    0.028888031999999998,
+    0.057776063999999995
+  ],
+  "cost_note": "Оценка off-peak…peak по usage; не банковское списание, без налогов и ответов с неизвестной стоимостью."
+}

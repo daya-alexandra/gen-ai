@@ -1,0 +1,596 @@
+{
+  "run_id": "db83af39-15fc-418e-a40c-f9bb3b1fd232",
+  "reviewed_on": "2026-09-19",
+  "method": "post_run_source_context_answer_comparison",
+  "cases": [
+    {
+      "question_id": 15,
+      "question": "Какой предел параллельности установлен для MAP и какие изменения конфигурации запрещают продолжать старый эксперимент?",
+      "strategies": {
+        "A": {
+          "source_hit_rate_at_5": 1.0,
+          "evidence_coverage": 0.5,
+          "top5": [
+            {
+              "chunk_id": "doc_02_pipeline__1",
+              "rank": 1,
+              "start": 2000,
+              "end": 4000,
+              "bm25": 5.116660013364043
+            },
+            {
+              "chunk_id": "doc_04_runtime__2",
+              "rank": 2,
+              "start": 4000,
+              "end": 6000,
+              "bm25": 4.036074146527863
+            },
+            {
+              "chunk_id": "doc_05_handover__2",
+              "rank": 3,
+              "start": 4000,
+              "end": 6000,
+              "bm25": 3.271963735242455
+            },
+            {
+              "chunk_id": "doc_01_project__3",
+              "rank": 4,
+              "start": 6000,
+              "end": 6461,
+              "bm25": 3.1454102354923306
+            },
+            {
+              "chunk_id": "doc_04_runtime__3",
+              "rank": 5,
+              "start": 6000,
+              "end": 6635,
+              "bm25": 2.504644806181171
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "doc_02_pipeline",
+              "quote": "Одновременно выполняется не более трёх MAP-запросов.",
+              "found_in": [
+                "doc_02_pipeline__1"
+              ],
+              "all_matching_chunks": [
+                {
+                  "rank": 1,
+                  "chunk_id": "doc_02_pipeline__1",
+                  "start": 2000,
+                  "end": 4000,
+                  "bm25": 5.116660013364043
+                }
+              ]
+            },
+            {
+              "source_id": "doc_04_runtime",
+              "quote": "В конфигурацию входят хеши кода и входных данных, модель, адрес API и режим обработки.",
+              "found_in": [],
+              "all_matching_chunks": [
+                {
+                  "rank": 6,
+                  "chunk_id": "doc_04_runtime__1",
+                  "start": 2000,
+                  "end": 4000,
+                  "bm25": 2.421038725995271
+                }
+              ]
+            }
+          ],
+          "answer_status": "insufficient_context",
+          "answer_text": "В переданных фрагментах нет сведений о пределе параллельности для MAP и о том, какие изменения конфигурации запрещают продолжать старый эксперимент. Фрагмент doc_02_pipeline__1 обрывается на словах «Одновременно выполняется не более трёх MAP-запросов», но не содержит указания на запрет продолжения старого эксперимента при изменении конфигурации; остальные фрагменты описывают кэширование, стоимость, проверку результатов и статусы запуска, но не отвечают на вторую часть вопроса."
+        },
+        "B": {
+          "source_hit_rate_at_5": 1.0,
+          "evidence_coverage": 1.0,
+          "top5": [
+            {
+              "chunk_id": "doc_02_pipeline__6",
+              "rank": 1,
+              "start": 3229,
+              "end": 3898,
+              "bm25": 7.269692260925596
+            },
+            {
+              "chunk_id": "doc_04_runtime__6",
+              "rank": 2,
+              "start": 3242,
+              "end": 3879,
+              "bm25": 3.8070588810363786
+            },
+            {
+              "chunk_id": "doc_04_runtime__8",
+              "rank": 3,
+              "start": 4342,
+              "end": 4968,
+              "bm25": 3.7321440863508726
+            },
+            {
+              "chunk_id": "doc_02_pipeline__7",
+              "rank": 4,
+              "start": 3778,
+              "end": 4431,
+              "bm25": 3.28221982665782
+            },
+            {
+              "chunk_id": "doc_05_handover__2",
+              "rank": 5,
+              "start": 1046,
+              "end": 1690,
+              "bm25": 3.28221982665782
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "doc_02_pipeline",
+              "quote": "Одновременно выполняется не более трёх MAP-запросов.",
+              "found_in": [
+                "doc_02_pipeline__7"
+              ],
+              "all_matching_chunks": [
+                {
+                  "rank": 4,
+                  "chunk_id": "doc_02_pipeline__7",
+                  "start": 3778,
+                  "end": 4431,
+                  "bm25": 3.28221982665782
+                }
+              ]
+            },
+            {
+              "source_id": "doc_04_runtime",
+              "quote": "В конфигурацию входят хеши кода и входных данных, модель, адрес API и режим обработки.",
+              "found_in": [
+                "doc_04_runtime__6"
+              ],
+              "all_matching_chunks": [
+                {
+                  "rank": 2,
+                  "chunk_id": "doc_04_runtime__6",
+                  "start": 3242,
+                  "end": 3879,
+                  "bm25": 3.8070588810363786
+                }
+              ]
+            }
+          ],
+          "answer_status": "answered",
+          "answer_text": "Для MAP одновременно выполняется не более трёх MAP-запросов. Продолжение в прежней папке отклоняется, если изменились сведения, входящие в конфигурацию эксперимента: хеши кода и входных данных, модель, адрес API и режим обработки. В таком случае для нового эксперимента необходимо указать отдельный каталог через параметр --output, например output_v2."
+        }
+      }
+    },
+    {
+      "question_id": 17,
+      "question": "Какова функция A99 и могут ли локальные тесты с заглушками считаться настоящим API-прогоном?",
+      "strategies": {
+        "A": {
+          "source_hit_rate_at_5": 1.0,
+          "evidence_coverage": 0.5,
+          "top5": [
+            {
+              "chunk_id": "doc_05_handover__3",
+              "rank": 1,
+              "start": 6000,
+              "end": 6924,
+              "bm25": 4.911887922146427
+            },
+            {
+              "chunk_id": "doc_05_handover__1",
+              "rank": 2,
+              "start": 2000,
+              "end": 4000,
+              "bm25": 3.613282326437833
+            },
+            {
+              "chunk_id": "doc_03_evidence__3",
+              "rank": 3,
+              "start": 6000,
+              "end": 6938,
+              "bm25": 2.2451381401691997
+            },
+            {
+              "chunk_id": "doc_03_evidence__2",
+              "rank": 4,
+              "start": 4000,
+              "end": 6000,
+              "bm25": 1.9998195220679051
+            },
+            {
+              "chunk_id": "doc_02_pipeline__0",
+              "rank": 5,
+              "start": 0,
+              "end": 2000,
+              "bm25": 1.9524135834151162
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "doc_03_evidence",
+              "quote": "Последняя рекомендация заменяется предложением продавать авиабилеты внутри планировщика и получает идентификатор A99.",
+              "found_in": [],
+              "all_matching_chunks": [
+                {
+                  "rank": 6,
+                  "chunk_id": "doc_03_evidence__1",
+                  "start": 2000,
+                  "end": 4000,
+                  "bm25": 1.9524135834151162
+                }
+              ]
+            },
+            {
+              "source_id": "doc_05_handover",
+              "quote": "Успешный тест не означает, что реальная модель уже проанализировала отзывы.",
+              "found_in": [
+                "doc_05_handover__1"
+              ],
+              "all_matching_chunks": [
+                {
+                  "rank": 2,
+                  "chunk_id": "doc_05_handover__1",
+                  "start": 2000,
+                  "end": 4000,
+                  "bm25": 3.613282326437833
+                }
+              ]
+            }
+          ],
+          "answer_status": "insufficient_context",
+          "answer_text": "В переданных фрагментах не описана функция A99: она лишь упоминается в контексте диагностического вердикта судьи, но её назначение не раскрыто. Что касается локальных тестов с заглушками, в источнике прямо указано, что они проверяют поведение программы на специально подготовленных ответах-заглушках, успешный тест не означает, что реальная модель уже проанализировала отзывы, а проверяющий скрипт по умолчанию отказывается принимать такой результат за настоящий API-эксперимент. Однако для полного ответа о функции A99 сведений недостаточно."
+        },
+        "B": {
+          "source_hit_rate_at_5": 1.0,
+          "evidence_coverage": 1.0,
+          "top5": [
+            {
+              "chunk_id": "doc_05_handover__5",
+              "rank": 1,
+              "start": 2595,
+              "end": 3225,
+              "bm25": 6.4339844217093685
+            },
+            {
+              "chunk_id": "doc_05_handover__11",
+              "rank": 2,
+              "start": 5716,
+              "end": 6356,
+              "bm25": 6.056638293146298
+            },
+            {
+              "chunk_id": "doc_03_evidence__7",
+              "rank": 3,
+              "start": 4013,
+              "end": 4688,
+              "bm25": 3.4435019802179503
+            },
+            {
+              "chunk_id": "doc_02_pipeline__0",
+              "rank": 4,
+              "start": 0,
+              "end": 636,
+              "bm25": 3.2388774769550537
+            },
+            {
+              "chunk_id": "doc_03_evidence__6",
+              "rank": 5,
+              "start": 3445,
+              "end": 4133,
+              "bm25": 3.1966648967036666
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "doc_03_evidence",
+              "quote": "Последняя рекомендация заменяется предложением продавать авиабилеты внутри планировщика и получает идентификатор A99.",
+              "found_in": [
+                "doc_03_evidence__6"
+              ],
+              "all_matching_chunks": [
+                {
+                  "rank": 5,
+                  "chunk_id": "doc_03_evidence__6",
+                  "start": 3445,
+                  "end": 4133,
+                  "bm25": 3.1966648967036666
+                }
+              ]
+            },
+            {
+              "source_id": "doc_05_handover",
+              "quote": "Успешный тест не означает, что реальная модель уже проанализировала отзывы.",
+              "found_in": [
+                "doc_05_handover__5"
+              ],
+              "all_matching_chunks": [
+                {
+                  "rank": 1,
+                  "chunk_id": "doc_05_handover__5",
+                  "start": 2595,
+                  "end": 3225,
+                  "bm25": 6.4339844217093685
+                }
+              ]
+            }
+          ],
+          "answer_status": "answered",
+          "answer_text": "Функция A99 — это идентификатор рекомендации в контролируемой диагностической сводке: последняя рекомендация заменяется предложением продавать авиабилеты внутри планировщика и получает идентификатор A99; эта рекомендация не относится к задачам корпуса. Локальные тесты test_lab2 проверяют поведение программы на специально подготовленных ответах-заглушках и не расходуют токены DeepSeek; успешный тест не означает, что реальная модель уже проанализировала отзывы, в тестовом отчёте используется явная отметка «ТЕСТОВЫЙ ПРОГОН», а проверяющий скрипт по умолчанию отказывается принимать такой результат за настоящий API-эксперимент. Следовательно, локальные тесты с заглушками не могут считаться настоящим API-прогоном."
+        }
+      }
+    },
+    {
+      "question_id": 19,
+      "question": "Какие изменения текста допускает проверка цитаты и как сценарий избегает ошибки чтения русских файлов в cp1251?",
+      "strategies": {
+        "A": {
+          "source_hit_rate_at_5": 1.0,
+          "evidence_coverage": 1.0,
+          "top5": [
+            {
+              "chunk_id": "doc_05_handover__1",
+              "rank": 1,
+              "start": 2000,
+              "end": 4000,
+              "bm25": 10.245192247125113
+            },
+            {
+              "chunk_id": "doc_05_handover__2",
+              "rank": 2,
+              "start": 4000,
+              "end": 6000,
+              "bm25": 9.157176209802781
+            },
+            {
+              "chunk_id": "doc_02_pipeline__1",
+              "rank": 3,
+              "start": 2000,
+              "end": 4000,
+              "bm25": 5.326827084944136
+            },
+            {
+              "chunk_id": "doc_03_evidence__0",
+              "rank": 4,
+              "start": 0,
+              "end": 2000,
+              "bm25": 4.2329827474799515
+            },
+            {
+              "chunk_id": "doc_03_evidence__3",
+              "rank": 5,
+              "start": 6000,
+              "end": 6938,
+              "bm25": 4.072235907404908
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "doc_03_evidence",
+              "quote": "Нормализация касается только пробелов: подряд идущие пробельные символы заменяются одним пробелом.",
+              "found_in": [
+                "doc_03_evidence__0"
+              ],
+              "all_matching_chunks": [
+                {
+                  "rank": 4,
+                  "chunk_id": "doc_03_evidence__0",
+                  "start": 0,
+                  "end": 2000,
+                  "bm25": 4.2329827474799515
+                }
+              ]
+            },
+            {
+              "source_id": "doc_05_handover",
+              "quote": "Код проекта явно задаёт UTF-8 для файлов, а сценарий дополнительно включает соответствующий режим интерпретатора.",
+              "found_in": [
+                "doc_05_handover__2"
+              ],
+              "all_matching_chunks": [
+                {
+                  "rank": 2,
+                  "chunk_id": "doc_05_handover__2",
+                  "start": 4000,
+                  "end": 6000,
+                  "bm25": 9.157176209802781
+                }
+              ]
+            }
+          ],
+          "answer_status": "answered",
+          "answer_text": "Проверка цитат допускает только нормализацию пробелов: подряд идущие пробельные символы заменяются одним пробелом; регистр, отрицания, числа и пунктуация не удаляются. Это строгий режим, поэтому перефразированная, но близкая по смыслу цитата может быть отклонена. Ошибку чтения русских файлов в cp1251 сценарий избегает тем, что код проекта явно задаёт UTF-8 для файлов, а сценарий дополнительно включает соответствующий режим интерпретатора; изменение цвета текста в терминале или повторная установка API-ключа такую проблему кодировки не решает."
+        },
+        "B": {
+          "source_hit_rate_at_5": 1.0,
+          "evidence_coverage": 0.5,
+          "top5": [
+            {
+              "chunk_id": "doc_05_handover__7",
+              "rank": 1,
+              "start": 3610,
+              "end": 4269,
+              "bm25": 20.19126738092176
+            },
+            {
+              "chunk_id": "doc_03_evidence__3",
+              "rank": 2,
+              "start": 1679,
+              "end": 2362,
+              "bm25": 6.602961488211459
+            },
+            {
+              "chunk_id": "doc_02_pipeline__4",
+              "rank": 3,
+              "start": 2199,
+              "end": 2819,
+              "bm25": 5.433063790928439
+            },
+            {
+              "chunk_id": "doc_03_evidence__9",
+              "rank": 4,
+              "start": 5100,
+              "end": 5814,
+              "bm25": 4.745991141179817
+            },
+            {
+              "chunk_id": "doc_05_handover__9",
+              "rank": 5,
+              "start": 4624,
+              "end": 5328,
+              "bm25": 4.621912926987072
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "doc_03_evidence",
+              "quote": "Нормализация касается только пробелов: подряд идущие пробельные символы заменяются одним пробелом.",
+              "found_in": [],
+              "all_matching_chunks": [
+                {
+                  "rank": 46,
+                  "chunk_id": "doc_03_evidence__1",
+                  "start": 526,
+                  "end": 1238,
+                  "bm25": 0
+                }
+              ]
+            },
+            {
+              "source_id": "doc_05_handover",
+              "quote": "Код проекта явно задаёт UTF-8 для файлов, а сценарий дополнительно включает соответствующий режим интерпретатора.",
+              "found_in": [
+                "doc_05_handover__7"
+              ],
+              "all_matching_chunks": [
+                {
+                  "rank": 1,
+                  "chunk_id": "doc_05_handover__7",
+                  "start": 3610,
+                  "end": 4269,
+                  "bm25": 20.19126738092176
+                }
+              ]
+            }
+          ],
+          "answer_status": "insufficient_context",
+          "answer_text": "В переданных фрагментах нет сведений о том, какие именно изменения текста допускает проверка цитаты: фрагмент doc_03_evidence__3 лишь приводит примеры недопустимых формулировок («задачи исчезли», «пятьдесят секунд»), но не описывает допустимые изменения. Также нет данных о том, как сценарий избегает ошибки чтения русских файлов в cp1251: во фрагменте doc_05_handover__7 сказано, что код проекта явно задаёт UTF-8 для файлов, а сценарий дополнительно включает соответствующий режим интерпретатора, однако механизм «избегания» ошибки не раскрыт."
+        }
+      }
+    }
+  ],
+  "strategy_statistics": {
+    "A": {
+      "answered": 22,
+      "abstentions": 8,
+      "api_responses": 31,
+      "prompt_tokens": 97201,
+      "completion_tokens": 9871,
+      "cost_interval_usd": [
+        0.018959838,
+        0.037919676
+      ]
+    },
+    "B": {
+      "answered": 22,
+      "abstentions": 8,
+      "api_responses": 30,
+      "prompt_tokens": 46855,
+      "completion_tokens": 7687,
+      "cost_interval_usd": [
+        0.009928194,
+        0.019856388
+      ]
+    }
+  },
+  "all_source_hit_scores_equal": true,
+  "different_answer_status_questions": [
+    7,
+    15,
+    17,
+    19,
+    26,
+    27
+  ],
+  "notes": [
+    "Исходная документная метрика не изменена; различия разобраны на уровне фактов и ответов.",
+    "Статус answered не является независимой оценкой корректности.",
+    "Опорные фразы размечены после пилота, их покрытие не является слепой оценкой.",
+    "Исходный submission_status.json сохранён. Его false для разных HIT/MISS документов соответствует ничьей по каждому вопросу."
+  ],
+  "new_api_calls_for_review": 0,
+  "report_sha256": "e9bb4aaea67e0e67b4a0758f9d385f876686374ddf3670a8a2a692049fc73ce8",
+  "source_files_sha256": {
+    "answers_B.json": "7998483d6f83ea4a9c925f801f3974ee6cc05530e0bc07d16b45158cab9af08d",
+    "evaluation.json": "8ed9cfaa59663455983883b2c4705b6a9c9f1922ba0b4ef5f00ccabc8db961a5",
+    "answers_A.json": "3ea86c176d694abba315ff02d8fa892e65bbdd0622db5338b79fad52b654e40d",
+    "retrieval_run.json": "bb8261cc96d9ddbffdfa4bc84ba71ba38c1f7ea01ee569cacbee62f52976098d",
+    "chunks_A.json": "0fa6f83d9ee34e2fc4bef4a87427b4dcefbc01bdddc7d68129de1feb310a1cdf",
+    "chunks_B.json": "f73182a194193e18126af30e876ba04893de0260812751453480625a2cc236ff",
+    "submission_status.json": "103d59d3e0fc2ab73ddfcac4dc34604ae624060b220edaae0bd8fa2fd350ee14",
+    "report.md": "c59118226b3f0ed331d8e0d493f4e6f490bc022688269e3cb6c042a7095e2259",
+    "generation_metrics.json": "6b0ba7bcfa399e6e9d5840cfb1fa9c20d9dabbe5620f5362d9eb7617f6ac6a8d",
+    "generation/run.json": "3bf36d05c5940d653489834b5c88b6622ff15dceb30c1ca966dcc62114b7966c",
+    "generation/budget.json": "8c11f3632115908d90122ed51a339c064a1cdcafaa1ce7e21d90cd7992a3052d",
+    "generation/api_trace.jsonl": "2956d78e7a621903dee3614d82bfb835296065923672cb6f6948506c5b3d74a7",
+    "generation/cache/c7ff5664b5615516c4cf3917121c9777590e2b6a5650931370ee90e2ea621dff.json": "cbcb2d07650bcbb7cffa4a08ff5934fd4284a092cdc31938ceb4d9c0d11d90de",
+    "generation/cache/1e5a91b959e9c53bb8196eff02f03b65a373c2831dc99f20e4b5e25ba19e5dfd.json": "da53e38d2caacffbcef0b746f56bda08da6ad8cae8feac81e73270490818d9ec",
+    "generation/cache/cfb25cce0edd61d857aeb2b59e67da2157c6f047f60f787027dc637e3507324b.json": "55345115cba26ace70bf3f3a4051dcbb93aea56daf36fc1ee06db27eacb9e862",
+    "generation/cache/ce67537a81963b0c8e46c060e87aa229ca95d634db0b5fff8fb4acb547e24241.json": "4e11d908d307f9efa372735f9ef0a7df0f282578450eaecf123bba29baa04401",
+    "generation/cache/3caa2f6bab5b2cb7b56b4c46be2bafe5e9ee6f7dc9a56ca5874cdb40ded6cdd6.json": "25084fa507174f65197f902650ed71a1d1435f5afda0c31aa4b7f699750b44aa",
+    "generation/cache/e551e99e3adc4f076b2770723f8cc44f72d4944b7a7fba0dd35d2cda2eb58902.json": "217a560fb641e7d5b2d855176887b3e234ff8ff5a5ecd96b9439571615ec457f",
+    "generation/cache/09b65be7cab3ed70b7b4b4f6c594d60373981b143c1bcbc84a473694c18f9109.json": "3023ca9a157aa1c6b0933176efe6c7b9d12b8a94ca3579059452d0f2ea6b3613",
+    "generation/cache/7fd237fab56a436316b613de53cc2f06d93b7ea16aa52b6e9e929a7ca4ed9930.json": "0b39c15a85e70a2a4e5658b00afb9a70ca80e92b670335b7f5e24b06690dc6ae",
+    "generation/cache/cb5c8729ce7ff5ca78f8ab3abcfad408144e83d392d4345f8892711a35343538.json": "9e24c0962ea34ff8900f184d86d6bbb29eba6991fe2f480e52ad9a8a285fd486",
+    "generation/cache/78324080795fbea7e914ef13ea08ef624ec31f6b9010ef8572662ee5024f8022.json": "18f4572fc02a4177853a4aa62fbedc3eb14ed63930fa020694e2417ce71806f9",
+    "generation/cache/015309394a5a6dd57ef08f4a7f83b3aef75cba68ac3ac78f04bfb8140ce25ce8.json": "c9c7ab4406276f6ac66d7dcc440070bfafd94bcd266c4eeabeaa0a33747ebc7a",
+    "generation/cache/3ad0025a87f8f7cf9687b9f65909ef4e7f9d7eb9763cbc7644dd6c3cf2a1821e.json": "61472c83121a65b0d14d1e4c043abc21d8997056f2d201c01e377fd4938035db",
+    "generation/cache/7c1c0c26148e06b3137a7a9c6caa93f5f2e3dfcdf56780fb7a61e2fc365d6b3b.json": "9d1107ac5fd9756cff96b4da74db3654631a85e327f25ecdf76220a1bc7b0569",
+    "generation/cache/860055867ff07f0fb78c2950d77ae9580fe305e6dbc619b7dc663caccfd1b300.json": "75cb6032f5ac7e7b72ef6f23300a0ebfb87c41cb679a4b81a40c3a459f993b33",
+    "generation/cache/1533a67d8c6efe9129833df3186b86708bf06930308f26e6c4d4f54aa050c7af.json": "3a2fbd6cd40130341568283af7b351e2d0b384d8149ed850a26ea7dd16dc719f",
+    "generation/cache/801715838a9f450bf344057ea9e886c6b282dbbb9637399cae26cf8e55b6b0b7.json": "c0c8f841e635aabb04a486dbe7ac54833f37c322b4c13a43e95b73e17a86d34e",
+    "generation/cache/3891a0950c09c5f23803c902165d03f4d41619b5d5a1155d226b628ef53129fc.json": "863a3468e4c05941ac10f358e30e17c28d8604eebff399ab92e4ade7f63fca9e",
+    "generation/cache/d873b1a7ec76ed5cab4b407411451ca806e7111ced250aaa15e3da6f485f27df.json": "d2e79c2c9f3242147e585dcd92485e45cd5294f734471b60e90e3f387b265376",
+    "generation/cache/c400cb29795e44e1fa29887b3f4731ede59cfff527b4459a837461e1d0e06d51.json": "c05966f430374f53b62c3e6523bd38cab8d79c8d0b23c677095532fad2edc9e5",
+    "generation/cache/a48851b1a9404be24efda166d61a2a93b6846a2025a2ac2e4112c29d8139dff8.json": "26eb41e4cae3d89e68070bfa85b7661729fe70d462de4bbbe71f48e207ece659",
+    "generation/cache/bbd25dd20da282c5acfa8c7cca93f511ca7832bc50634d7bfd1473eafadab950.json": "6fb5b5a983f9803271c3aaf6a1b1c7861ccd16a9aca8da97f4ffb9bdbc4da7af",
+    "generation/cache/8249ba6c659d9dd92523b8ec933d16b5e8d55921564498a5c18fb38a663821e3.json": "5e04bcb3386026bef3c6da3496d9a400428392660084b50b39991f36d6b479ec",
+    "generation/cache/55dbcb838f7721bc00e004ebf1f25b31a909a1e6838be5070dc75bf5af68338a.json": "bd9718b2268f8e149e9ec1a015c2b6c456a326833188dd0e359dde330b9f517a",
+    "generation/cache/dba5231408baa3c3bafb76adeed753c2f9f3bd47d9cf6e745da97c2fdf38701b.json": "815709fcb37313f6939e2d347feba02aebf4cf9fe743df236b48d7764671aa5a",
+    "generation/cache/f017445ff5013a7b029e37e509ddac26d3375502eaf9e8e7904a6b21df6b0709.json": "439a705ff6e67b248fd9877cd14392d3f69810c0fdeb44dea5568f319afe0a28",
+    "generation/cache/a5bddba6f60e69153e8404c1f5f8680f309d755234a84c780737274cd2a4cf0f.json": "a520ab9e460550e33a01c817251a4ec26232e316b632271f3cb11d1b6d874f5b",
+    "generation/cache/e6ae78a551fcc9daf811996e386593c66ecb4d51a6a2e4b7db5a4f5b0666e4bc.json": "ea1224e652642743873411833b43d8a16ac3e129d8dc08478dc0792da4596e4c",
+    "generation/cache/76fa8f78f7789e826b7bddf92dd937b1c55c55f783477c17f881fc9192046b1d.json": "3e82b5baea2c2dc2c1ab286b60be30bd249505822591095908fc331ce58abdb5",
+    "generation/cache/64ff965caba75bf1a76d904532ba1c5135494b2661c62afdaf7fff6489ba8e30.json": "02c935d010effa260b15a81053e7fab9dfc2386a9b34dd06583c9029ea810e0c",
+    "generation/cache/2bc398eca45616c0f79fa665b744de2329710e1a2bc30eedb1358f83a13cd15b.json": "f5619b5d1f31a54e59844f646629139623c0de7a5a15570be2b59b1c363b91ab",
+    "generation/cache/64dfea4792b41117027e636deae5e1f98f756801c2fe37cff3fc0172c86e0a43.json": "19cf6d81f9b486fddf54627c23d8240210eaa78d83e06ef3ecced9c91d953887",
+    "generation/cache/219589780da333c9f65d4d4cdae665029b054fef1f8a9855e5eb51e9fea71d53.json": "f1edb225c2e3ecb0a2f1158aeda5fe91dcd855c9c1097815b6641c23dfd69e04",
+    "generation/cache/9fa918ed54845e1d406a7a5fe3947d195ef2936af6400ddd08c516a1a30cb87f.json": "273810156fe82894a170e7687a701662969d397cbe7cca7040cfc08d3befb237",
+    "generation/cache/7efe27974557937e6f87cbfcbfdb95961e759c47d507a4e050a7849131bc18ca.json": "3debd5b7f11e26504c3aa557d331c877f683ee840013f25f33a5deb497d5bfad",
+    "generation/cache/cccda7ef2a8223333c87742ed5b5a078f46d49ab983a95c269b81f2eef643091.json": "83fbcd183cbeff6e067c91654c34aed34025982896fcc4b50d6c8caa643a2099",
+    "generation/cache/66867935bfbf50780a32042046383f830e6237d8d7af4401f72ce82e8e18d0ba.json": "f9b4171361782fae02998382e2e52bef89fe12cb76863ea2bf1f0fb117d389a3",
+    "generation/cache/17e477baf10510c8fc1df0f60683a597d6c16c942434bff5504428535cb356c9.json": "637145e105cd96e31664d24475f4e27419c65b5e2c25628c6cfac5aed239cff2",
+    "generation/cache/c68cfc140e547a57c4c7971ebe4d5a30bff878c40378d376f4f7626e6def41e6.json": "a36c55d9f6fb6374d3d9f0bf38d21f9722c5e3268e56a6931c731fc4395ab72d",
+    "generation/cache/82fcceb1165a90fcb113e7b83450dc4befb4bec06a4566d92f43ead0ca2b0e00.json": "12f5f79c0ade580ece096f3690044631e03c089345d54664cd4cd83de59bc91f",
+    "generation/cache/36d8848443fd57c461b4b9f32332e251554a49718eac5d10a062f20180cbf87f.json": "7b50f13d37aef8a58ddb498050bdd89fd22da5ae92b829d05f167580afd6aeb1",
+    "generation/cache/c1762bf75ffe930e74400d400f60754455448e6ba21f26576d8d14453ead51b2.json": "7137dbc9da8e4f8e785344d5576ccbe60e83675e910bf34a8cb6d8755f297b5b",
+    "generation/cache/4d19f0f728f84f088e5a871ec37822f281c9b610994a4f0dffb09fe60660f32c.json": "33ec0c1a441158d35c6061d0f4e5b682c954014083d0dc464179b829a5695f3f",
+    "generation/cache/f3b0044f929fb6f610d0bbd12a9b960107856866f0050f10fa41f26b34f91ba9.json": "b4d490fd4e59c96b6e3ccebafefeb5aa26f3fa1c74b08f44c11929f25e8019a0",
+    "generation/cache/0e5a0ba750fe9386ff90feffc1f7e946b4a6e32ddc38ea19fcfafc2667c4373b.json": "945b7ccf9389d267550273f7feed1b91738559d9b572018555d52257224b5102",
+    "generation/cache/ee62ac1752c67c00937135d8fe941796f5d58b86223fddd9e10e92f7683e8a9e.json": "af060f8ad6096b808e2d3bcd2ba98757936405488daa39aede045aef520c323f",
+    "generation/cache/1b3aec6ae746d8c6e29afeb642851ec88d6f4db65c344a33665924b6bde312cb.json": "187f508f80b3bf02bf347527fb7f7aa7be3804399ef74d0b3a4d94f01eeb2513",
+    "generation/cache/4e4bf62d4bf7ae089a4c52471dc066720efaba6ee8812a02100f60bfbd4276c0.json": "93ee3ab79dcb4893ae25a7a75bf0bd6513f96c1642795c3d84b691b65dfbaff5",
+    "generation/cache/2d42a017bd59c0f2e0b2bf25ece29efeaf71bb889e12c50654495249317722d6.json": "4a92e442195dbc19b1d95c757692a819f1df05de13e79919e5fa73c66dcfc99e",
+    "generation/cache/4bcf22be531a532bedbdf7500cad2dba0b25d6d27ba79f9571c105c0a0862aa8.json": "390cf2e3a24e699247c759539953fa9ee524251a4e8efb16193c876c862340c4",
+    "generation/cache/15bf8f35561d51ee346b558ed1ad89be8a90f00b5b30c11d4190182105fa8096.json": "dd17c547161c83dc2b3c66fd75243a61356e813d7252dfcbe89abd0eb39b2c48",
+    "generation/cache/bf79fc02bf332636efafc8cfb7b6f919c31a06f93330e20e6e8f3d30faa6b2c8.json": "ac3b7230a2a07ac0184c53962cad7cf8d88f7309df0625f4070d52172df84787",
+    "generation/cache/fe8b72f13924ae3f1cbd029f19dd1a1191a70bb59de7f531d4a1e940f45feedd.json": "7ab50984de6dd6888daca3fb0d8309169f1135a79b8dacb1a948d8925a047996",
+    "generation/cache/7ec0eb34806bb52413ae8f5fd492a960757e428574ee8569bf3de1f4e1549a8d.json": "48ff8e304003900675fbfb843aa9ef76518b68d211e14689bac6973fe305cdcf",
+    "generation/cache/36ffdc8c9a4edce174b9e9b0e81ed5134c10ae24980e58f72d07029f429c24b4.json": "7c21b3eba928464acb620bfd0e27241d8e4959009595459676a7146fecc73015",
+    "generation/cache/db07ca7f2c0951a0b02124e84acd5a2d07999fa039aa3773e057caa3b8f65512.json": "1bd29e1fdb108150477955e64e139ddfc1fbfad21364aa8dc1d785d120459dbe",
+    "generation/cache/e13a093703f9fda921943067fd96d7566331f1626e153145d285625d3bd783e1.json": "fd46eed4a89a6b6ffd613a5db07a00b2020e078ec6ca580e96af29c30547e681",
+    "generation/cache/6482c70b6efeeb8c968ba0bd9b5ff3515b797cf98f68f9e40f5f0e8e86b66549.json": "0104dfb615dee5e1e0fa25909c15ee93ae0ae108b07c2fa579fee1e46b784af1",
+    "generation/cache/eacab14859927af0201ccb937941b93504b1fc30d75cf5b53f0bc7e58cef12ae.json": "830faaa6499b5749ae63c146dfac08bd812441c34794a7edaccdcaffdf143b7b",
+    "generation/cache/336d33d529422fe282e0fc287f113f55d03874a548aaf646a68452fbb797641f.json": "014d7ab6f5c9a027b0718093f0ccbeccfc0e3320b9fec3abe738f4712dbb899d",
+    "generation/cache/4699990638e9ee1480bc05736e50588b2b0ae3c0d0cfbfd5dfd99705940970ba.json": "a8200074cfc5872dbb435d53bbdb3c48cb30d814ed5cceaa7216388d59a4d18a"
+  }
+}
