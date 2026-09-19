@@ -1,0 +1,58 @@
+{
+  "review_date": "2026-09-19",
+  "run_id": "ccb4cc59-f2bc-42ba-b8fd-1eee6f173dc8",
+  "method": "post_run_source_comparison",
+  "automatic_distortions_count": 0,
+  "post_run_examples_count": 2,
+  "examples": [
+    {
+      "review_id": "R24",
+      "stage": "reduce_v1",
+      "source_quote": "Возможно, задел баннер пальцем, но кнопка была почти рядом с чекбоксом задачи. После возвращения отметка о выполнении не сохранилась. Повторил отметку ещё раз, теперь она на месте.",
+      "artifact": "summary.json",
+      "json_pointer": "/findings/4/text",
+      "model_text": "Монетизация и реклама: в бесплатной версии после закрытия списка появляется полноэкранная реклама с задержкой крестика, а при открытии рекламы приложение может отправить в магазин другого приложения, после чего отметка о выполнении не сохраняется; при этом другой пользователь отмечает, что баннер не раздражает, а в платной версии рекламы нет.",
+      "finding": "Оговорка о возможном случайном нажатии опущена; единичное несохранение представлено обобщённой формой «не сохраняется».",
+      "present_in_final_summary": true
+    },
+    {
+      "review_id": "R29",
+      "stage": "ie_05",
+      "source_quote": "После обновления напоминания стали приходить стабильно, но перед этим я ещё отключил ограничение фоновой работы. Не могу отделить эффект обновления от настройки телефона.",
+      "artifact": "reviews.json",
+      "json_pointer": "/reviews/28/praise/0/text",
+      "model_text": "После обновления напоминания стали приходить стабильно",
+      "finding": "На этапе IE опущены второе изменение и неопределённость причин; в финальной сводке этот контекст восстановлен.",
+      "present_in_final_summary": false
+    }
+  ],
+  "report_completed": true,
+  "new_api_calls_for_report": 0,
+  "note": "Автоматический submission_status.json сохранён без изменений и описывает только находки автоматического судьи. Два дополнительных примера установлены сверкой файлов после прогона; оценка судьи не пересчитывалась.",
+  "source_artifact_sha256": {
+    "input_snapshot.json": "1ed7c62b3f1db50b51cc8ac98f3ebab2ae9489d733940d5104796134acf173b4",
+    "summary_v1.json": "8bef143b3af01fe8528e0916a9d8a965ed730e43e55078f75256b9d5cc7fdf93",
+    "reviews.json": "f11a5fecb5b15c5a053900451b38db3fbfdf9ffefbcbb7baa785ab3579051a23",
+    "discovered_aspects.json": "48de8dfeff9d802c066d5013496e5656561351f124af4687937012b2b702f7e3",
+    "map_summaries.json": "9c4f9a1f0c3d6697d4da20b143694e4237501ef8a9971ebdab3a70bc63a84bd3",
+    "run.json": "278ed6c46ff43857a78036f2686edadf61c24450d6687fee3ed4b5d1db069fb2",
+    "budget.json": "5d2c66971245a4b2978551c5a0fa89fe1cf4d65afa27a9a15069aa76a45baaec",
+    "diagnostic_expected.json": "5b0d9931e5eda80e676e710404e3be6230ecc408c6f156b66397054e6fc2bea4",
+    "diagnostic_summary.json": "632816c6cc694607a11271f87518fd5b029b67384748b722d42fa9434ae6b206",
+    "metrics.json": "ea68648e82e286ebeac2d0f4354c51f2b84939a3c0536fa82670f96484f3cec0",
+    "heatmap.png": "38d4bbae0d04313d502dc16470a9f5788dcd9bf1be1c0afc373ad4634d395118",
+    "выводы.md": "d580a964e291cdde9e4d35c37b1d095d491b49a3317e1728afae6ac32fb7b17c",
+    "diagnostic_judge.json": "7d9c02e624c4fd877f9b9e2584d74fdc36344acaac5bd916dc92a6fc54fd320e",
+    "submission_status.json": "49cbbafd87989c732d2958429f8b60d6640e47794e826cb88f93337bc5e36330",
+    "judge_v1.json": "142f5749acee00f0993a8f512299b09a15a74f056bbe6c3c8e3b014c1d2a9a0a",
+    "chunks.json": "ce871a67a354d6f05a7c8fadc5b3ab5df255b7367e1db6de03ca9f56e5b31bc6",
+    "continuation_notes.md": "79660eb71ad27a3607662cfc378144ed422e15ebacf58860c39c44f9df0673e1",
+    "aspects.json": "c0d42373c087e9903b6d0143724584c65713920a156afc21669a3cd2e780ccbc",
+    "api_trace.jsonl": "83deb1b62ab10fa117fe651867edf4e9f0263cc4f3b1b97d1644f33404046723",
+    "README.md": "d5262ea085d1a58e6c744dc7eec9ccb629dcff37c8567a5abe6bb1177714db39",
+    "continuation.json": "ae4d16aa935d25c6c4f37ee1a6682a1a388e098152c44dc533cbee81137e6b12",
+    "summary.json": "8bef143b3af01fe8528e0916a9d8a965ed730e43e55078f75256b9d5cc7fdf93",
+    "judge_report.json": "142f5749acee00f0993a8f512299b09a15a74f056bbe6c3c8e3b014c1d2a9a0a"
+  },
+  "report_sha256": "1755e86ed5e34fe2dff1aa03f747eb44eee5f1f7c82b574e6b7fe6db5c4a8b3e"
+}

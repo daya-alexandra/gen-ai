@@ -1,0 +1,8 @@
+{
+  "real_api_run": true,
+  "numeric_criteria_met": true,
+  "natural_error_examples_found": 0,
+  "natural_weak_verdict_found": true,
+  "review_needed": "Прочитать выводы и сверить трактовку аспектов. Контролируемые ошибки не подменяют примеры естественных ошибок.",
+  "two_natural_error_examples_available": false
+}

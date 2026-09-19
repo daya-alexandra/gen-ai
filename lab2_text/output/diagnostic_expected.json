@@ -1,0 +1,11 @@
+{
+  "kind": "controlled_fault_injection",
+  "not_main_run_errors": true,
+  "inserted_distortions": [
+    "Все пользователи без исключения сообщили о потере всех задач каждый день.",
+    "Пользователям гарантирован возврат денег за подписку в течение одной минуты.",
+    "Покупка подписки доказанно устраняет любые сбои на всех моделях телефонов."
+  ],
+  "unsupported_action_id": "A99",
+  "judge_detected_action": "not_supported"
+}

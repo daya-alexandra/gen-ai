@@ -1,0 +1,299 @@
+{
+  "run_id": "ccb4cc59-f2bc-42ba-b8fd-1eee6f173dc8",
+  "run_kind": "llm_api",
+  "started_at": "2026-09-19T14:06:15.514534+00:00",
+  "policy": {
+    "name": "compact_continuation_v1",
+    "script_sha256": "382edebe07a243503b72fe1ed39c51fbdee834d2efaff769ac354823343f9a8b",
+    "profiles": {
+      "Summary": {
+        "max_tokens": 12000,
+        "schema_sha256": "f796892860ce71cb1fb61e19bc339f695c12aeb66e66ed09ada122cd8cab9fa9",
+        "additional_instruction": "Сформируй компактный итог, а не пересказ всех MAP-фактов подряд.\nВ findings строго от 3 до 5 сгруппированных наблюдений, в action_items от 2 до 3\nдействий. У каждого пункта не больше двух evidence. Цитаты копируй целиком из\nMAP: сокращать или склеивать их нельзя. Выбери подходящие короткие цитаты.\nОбъединяй только совместимые наблюдения, сохраняя различия платформ и оговорки.\nНе объявляй единичный случай общим правилом и не скрывай противоречия.\nЕсли места недостаточно, сократи число пунктов до минимума схемы, но обязательно\nзаверши весь JSON, включая action_items и limitations. Не перечисляй по одному\nпункту на каждый отзыв. Размер ответа ограничен; не добавляй пояснений вне JSON."
+      },
+      "JudgeReport": {
+        "max_tokens": 10000,
+        "schema_sha256": "99a2ada0085791958a03f95bf748d22f366d383e6acc9af2512adb3583ca5933",
+        "additional_instruction": "Дай компактный, но критический вердикт каждому action_id.\nДо двух цитат на вердикт, до пяти искажений и до пяти замечаний. Не повышай\nоценку ради прохождения порога: используй исходную рубрику и фактическую опору.\nНе придумывай искажений. Полностью заверши JSON и не пересказывай все отзывы."
+      },
+      "Discovery": {
+        "max_tokens": 8000,
+        "schema_sha256": "12c42969a9c9b16f3b2286a261ff8171e3817e8252984ed2c8155673f07795c9",
+        "additional_instruction": "Верни от 3 до 6 различимых тем, до двух цитат на тему.\nКратко объясни отличие темы от фиксированных аспектов. Не дроби одну тему\nна синонимы и не пересказывай весь корпус. Полностью заверши JSON."
+      }
+    },
+    "unchanged_stages": [
+      "ie_*",
+      "aspects_*",
+      "map_*"
+    ],
+    "max_retries": 3
+  },
+  "base_config": {
+    "input_sha256": "6e5e045707df63bd43a80f77b9f31e1119d8921a0028ac63ae19ccffff34e8af",
+    "source_ids": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R09",
+      "R10",
+      "R11",
+      "R12",
+      "R13",
+      "R14",
+      "R15",
+      "R16",
+      "R17",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30"
+    ],
+    "batch_size": 5,
+    "map_max_chars": 3800,
+    "map_workers": 3,
+    "diagnostic": true,
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com",
+    "thinking": "disabled",
+    "run_kind": "llm_api",
+    "code_sha256": {
+      "collect_results.py": "759f02ecbd505493c3bd2ab5b2b4d65ad59e3768f354ea0ba86caae4b2ef0061",
+      "llm_client.py": "eac2f3c2dbc32ed986872206dbda95e881804af5415b2ff41d2e19e4b26bad52",
+      "pipeline.py": "f801f2c3e9279e05f04e9f95237cac4bb076e13e741a24f499001cc94d6ccf60",
+      "prompts.py": "42a96bccea90201bd6ca3deaa9a25d3cca905064c1d494a88aa8bcc6039f9157",
+      "schema.py": "62634537853486a62dde6013fb50133a68b2f1a362e23252aec25b5694491c6a",
+      "test_lab2.py": "7495db53737cc643d9d1e767a0d793244c55197d479c876f4f509882328cf98d",
+      "verify_results.py": "62559efe5d7abec9a9e2be6b90d27570c2a8a7213661c4678c17e2cf5209cf4d"
+    },
+    "tariff": {
+      "checked_on": "2026-09-19",
+      "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "peak_input_miss_per_million": 0.3,
+      "peak_input_hit_per_million": 0.006,
+      "peak_output_per_million": 1.2,
+      "off_peak_multiplier": 0.5
+    }
+  },
+  "before_run": {
+    "run_id": "ccb4cc59-f2bc-42ba-b8fd-1eee6f173dc8",
+    "created_at": "2026-09-19T13:40:47.881358+00:00",
+    "status": "interrupted",
+    "config": {
+      "input_sha256": "6e5e045707df63bd43a80f77b9f31e1119d8921a0028ac63ae19ccffff34e8af",
+      "source_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R30"
+      ],
+      "batch_size": 5,
+      "map_max_chars": 3800,
+      "map_workers": 3,
+      "diagnostic": true,
+      "model": "deepseek-flash",
+      "base_url": "https://api.deepseek.com",
+      "thinking": "disabled",
+      "run_kind": "llm_api",
+      "code_sha256": {
+        "collect_results.py": "759f02ecbd505493c3bd2ab5b2b4d65ad59e3768f354ea0ba86caae4b2ef0061",
+        "llm_client.py": "eac2f3c2dbc32ed986872206dbda95e881804af5415b2ff41d2e19e4b26bad52",
+        "pipeline.py": "f801f2c3e9279e05f04e9f95237cac4bb076e13e741a24f499001cc94d6ccf60",
+        "prompts.py": "42a96bccea90201bd6ca3deaa9a25d3cca905064c1d494a88aa8bcc6039f9157",
+        "schema.py": "62634537853486a62dde6013fb50133a68b2f1a362e23252aec25b5694491c6a",
+        "test_lab2.py": "7495db53737cc643d9d1e767a0d793244c55197d479c876f4f509882328cf98d",
+        "verify_results.py": "62559efe5d7abec9a9e2be6b90d27570c2a8a7213661c4678c17e2cf5209cf4d"
+      },
+      "tariff": {
+        "checked_on": "2026-09-19",
+        "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+        "peak_input_miss_per_million": 0.3,
+        "peak_input_hit_per_million": 0.006,
+        "peak_output_per_million": 1.2,
+        "off_peak_multiplier": 0.5
+      }
+    },
+    "active_seconds": 135.1550067999633,
+    "updated_at": "2026-09-19T13:43:03.037287+00:00"
+  },
+  "before_budget": {
+    "d4603668-04e5-4789-84b4-248824710d27": {
+      "reserved_usd": 0.0023694,
+      "status": "observed_usage"
+    },
+    "3b1b4090-840e-4ca9-94a7-cddd9ee9ddf3": {
+      "reserved_usd": 0.0026925,
+      "status": "observed_usage"
+    },
+    "48f51dd1-d1e1-4ca4-b81b-d3d157c40f72": {
+      "reserved_usd": 0.002084808,
+      "status": "observed_usage"
+    },
+    "2e4fceca-3e01-4a36-80d4-ae5baffea572": {
+      "reserved_usd": 0.00234354,
+      "status": "observed_usage"
+    },
+    "88cf8585-f086-41a0-a61a-d45d5b7760f3": {
+      "reserved_usd": 0.002056308,
+      "status": "observed_usage"
+    },
+    "46c325e0-543f-4f86-ba91-8201daa2b45b": {
+      "reserved_usd": 0.00211704,
+      "status": "observed_usage"
+    },
+    "0217b72b-b217-4715-ab26-c67c9cc55d87": {
+      "reserved_usd": 0.0020539079999999997,
+      "status": "observed_usage"
+    },
+    "92cbf49c-4728-41df-8d14-ee8cb9a032e0": {
+      "reserved_usd": 0.00252024,
+      "status": "observed_usage"
+    },
+    "4bd902a3-9376-4283-82b9-a8e5dccce618": {
+      "reserved_usd": 0.002011008,
+      "status": "observed_usage"
+    },
+    "fef8316d-b28d-42ca-a448-175a75748429": {
+      "reserved_usd": 0.00213894,
+      "status": "observed_usage"
+    },
+    "be331ed0-5baa-4b66-8443-217daed57097": {
+      "reserved_usd": 0.0021430079999999996,
+      "status": "observed_usage"
+    },
+    "30c4b7b7-6d17-4053-900e-8eaf4594e6ec": {
+      "reserved_usd": 0.0021917399999999997,
+      "status": "observed_usage"
+    },
+    "2f5efced-4773-4eb4-b1a6-dc3d707e1476": {
+      "reserved_usd": 0.001605,
+      "status": "observed_usage"
+    },
+    "513c2e81-e79e-4490-a40a-6662bec6971e": {
+      "reserved_usd": 0.002159604,
+      "status": "observed_usage"
+    },
+    "41516f1e-4176-416a-be93-e91423f8d391": {
+      "reserved_usd": 0.001903704,
+      "status": "observed_usage"
+    },
+    "941f9455-d7b1-4424-8e3c-6a0c666c8808": {
+      "reserved_usd": 0.002260404,
+      "status": "observed_usage"
+    },
+    "f932b72f-848a-4a52-a474-cea96c4565e8": {
+      "reserved_usd": 0.001383096,
+      "status": "observed_usage"
+    },
+    "44533739-6f1b-4f2c-a87a-04ad8c9e3a1b": {
+      "reserved_usd": 0.0012898319999999999,
+      "status": "observed_usage"
+    },
+    "00c1ce20-e6dd-4b59-8027-34d54b1bcd9a": {
+      "reserved_usd": 0.000942204,
+      "status": "observed_usage"
+    },
+    "c3e48d07-700b-42a0-b6fc-0036004902e8": {
+      "reserved_usd": 0.0016991999999999999,
+      "status": "observed_usage"
+    },
+    "a202c554-dca0-4a90-9024-16d9cfc5ec41": {
+      "reserved_usd": 0.0078873,
+      "status": "observed_usage"
+    },
+    "f6feb92f-e6a5-4c77-a56d-7545f8b2daee": {
+      "reserved_usd": 0.006123816,
+      "status": "observed_usage"
+    },
+    "82c340aa-aba6-48d1-9cce-de550cc9074c": {
+      "reserved_usd": 0.006166667999999999,
+      "status": "observed_usage"
+    },
+    "4a667406-edbd-4935-a203-47f326eb487e": {
+      "reserved_usd": 0.0061718879999999995,
+      "status": "observed_usage"
+    }
+  },
+  "preserved_cache_sha256": {
+    "cache/3dc66e395b45940c77f2de0e43f7b4f09d4fe7535db3024e9a7bd402c297197e.json": "dd774d45e49bb06d3a3ff90cf56a8c2388aadc9f51dee03514843e38cfbb9e74",
+    "cache/3ffb86fcb9264a441d73beb419116cb4672a9e5096efbe6af2b282771e621d18.json": "8a9db07939b496838965979673e3dfb9f5e02a2fe5701bf66910fd202d2a6fe6",
+    "cache/404760ca12a21441decfec6a7c8399e053e65bd5f48390113841e772550764dc.json": "f656c3583b2b36bf22a572c4f475e426fce3fa11f89e568b04303cbed63026ef",
+    "cache/4cc76dfeac0ce46994ee362a972390a8e195c9eceb3f79b740cc9882b4f2fcff.json": "7b627b7ee1e4891da0a4204d07809ac4a214e50ed2fa462f2043fde87e9c4229",
+    "cache/4d441e142b7e8fd4e16c4a6e433b23f7a4a2e5cbb8ddfb85e9bd8dcee4c92dbf.json": "63bfacafe1fc9da741f6f11a9b9f3d906fd3276fc1921918cd5079363431040c",
+    "cache/4d8f0d4af44fdf3e58aede5de81a3488fcdd5946a715ff4ea490ca020075846d.json": "0bff2e0d422296419246f4b70617672c24378275bec795516a2c5b30996de0bc",
+    "cache/4f87e516dcc624eea5639e11d23219b64994fbb1d1ecd5ca3492aba7f6378370.json": "5f2b2ce24a2cb95bd762af14852e43ec3294aac4f596ce58ffa0641971deab74",
+    "cache/56c5b26f16a56a1f5b6ba7030f4781d425ef95d3f751aa207287ee03b4b03baf.json": "e9d59034425500b2b8d346f9ac4eeb292f2c918b60a3bbf51885e94419d69e55",
+    "cache/80b8220eee9d03928c5074d023ef7fce9e5b7bfa705b5b8c7bb6ef935041a294.json": "1043bf615e5c399530180227afc4842580853cc40f3924187fa06fe5f42a6f55",
+    "cache/943b0ee086d8b70578f8be80a9ec24f3d4556494054fe80d03debb2b37a72a6d.json": "82d95f2decf8dedd1e12b961bc627ccb395c1077db033a7d18be2c2da95e853c",
+    "cache/aa3d3bd3b3e0c63dfeb6a0b7e5fcc1b4efb53cad3c827c2b0a63f67098fdfb55.json": "5712fe2459082ed4d2d5230c64d78557169326bd274323ec48fa43c43e018328",
+    "cache/c40ba3df984cb3c5b82c134b82d7bab435c8658f0128f1269b76f9a04f7e62a8.json": "434f0c2cd65da23598a1ddf5d9c322ac84309f19009cbd86f06662520ca01455",
+    "cache/c9d8714a13fdf9a38bc3dbaef6861f8f919431d2ad5bef1977f5377709c2c314.json": "44b3f4c0c956c46b97641c7dfa41fda22e19d2266a7f344b387414cf5160a34f",
+    "cache/d9e808819033ec458b563eb031bbdbf7eb5eb5f983eab001c6c385a39ae98dd1.json": "e37f97d050a3e9f9f94a97be2bf261f8133e2e3a519acce08662b49a67c10343",
+    "cache/dd360f4c48af428d32578cfa7a917bad0ed00fe22606eb6ee0bb0b6d651e8e9f.json": "55e85cd54757c8ce5db7ec5ca3074c044c6ac70e22afdc864c82b33efe525d92",
+    "cache/e3fa2050ef4717229ed4271618142bdbc791c9666b620bd869a88197c2321a49.json": "d7904b1ad589491aaaf58c8c7e7666f5658cb6d0b65678b047a751a7dea0d9be",
+    "cache/f0865e36c75261ccd94f236ac2d489f856f5563ce5ec5dc39ae2f879c45fa97a.json": "ba8eabb1d6af096587cb8cae5861e9e9851206c8ac8a474cbf922f7aff21be0a"
+  },
+  "verified_cached_stages": [
+    "ie_00",
+    "aspects_00",
+    "ie_01",
+    "aspects_01",
+    "ie_02",
+    "aspects_02",
+    "ie_03",
+    "aspects_03",
+    "ie_04",
+    "aspects_04",
+    "ie_05",
+    "aspects_05",
+    "map_00",
+    "map_01",
+    "map_02",
+    "map_03",
+    "map_04"
+  ],
+  "trace_prefix_bytes": 346944,
+  "trace_prefix_sha256": "3964953726047afd36a507c28a8c4389585b04fec4baaa2defbc07ff0128fbc5",
+  "status": "completed",
+  "updated_at": "2026-09-19T14:06:41.880895+00:00"
+}

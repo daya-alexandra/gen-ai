@@ -1,0 +1,24 @@
+{
+  "run_kind": "llm_api",
+  "source_count": 30,
+  "valid_reviews": 30,
+  "validation_error_responses": 7,
+  "pydantic_error_responses": 3,
+  "quotes_checked_across_attempts": 355,
+  "ghost_quote_checks": 0,
+  "ghost_quote_ratio": 0.0,
+  "final_ghost_quotes": 0,
+  "judge_overall_score": 0.8135,
+  "api_responses_including_diagnostics": 29,
+  "prompt_tokens": 130553,
+  "completion_tokens": 53482,
+  "cache_hit_tokens": 80768,
+  "responses_without_usage": 0,
+  "observed_usage_cost_interval_usd": [
+    0.039799254,
+    0.079598508
+  ],
+  "cost_note": "Оценка по usage: off-peak…peak, без налогов. Это не выписка провайдера. Диагностика включена.",
+  "active_seconds": 161.52086049993522,
+  "numeric_criteria_met": true
+}
