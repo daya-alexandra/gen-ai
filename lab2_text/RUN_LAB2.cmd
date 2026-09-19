@@ -22,7 +22,9 @@ if not exist ".env" (
 )
 ".venv\Scripts\python.exe" -m unittest test_lab2 -v
 if errorlevel 1 goto failed
-".venv\Scripts\python.exe" pipeline.py
+".venv\Scripts\python.exe" -m unittest discover -s recovery -p test_continue.py -v
+if errorlevel 1 goto failed
+".venv\Scripts\python.exe" recovery\continue_lab2.py
 if errorlevel 1 goto failed
 ".venv\Scripts\python.exe" verify_results.py
 if errorlevel 1 goto failed
