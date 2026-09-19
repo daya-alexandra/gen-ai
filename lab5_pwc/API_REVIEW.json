@@ -1,0 +1,64 @@
+{
+  "review_status": "verified",
+  "raw_output_unchanged": true,
+  "source_archive_sha256": "e5d048a6fb90272a9cca3318f53e416efcc47f7b96bbc108e34b5e5dc4c5840b",
+  "run_status": "completed",
+  "run_kind": "llm_api",
+  "model": "deepseek-flash",
+  "api_responses": 723,
+  "prompt_tokens": 610390,
+  "completion_tokens": 73670,
+  "estimated_usd_interval": [
+    0.074840466,
+    0.149680932
+  ],
+  "original_automatic_total": 51,
+  "reviewed_strict_total": 79,
+  "reviewed_strict_out_of": 90,
+  "reviewed_matrix": {
+    "Q1": {
+      "single": 5,
+      "pwc": 5,
+      "pwc_validator": 5
+    },
+    "Q2": {
+      "single": 5,
+      "pwc": 3,
+      "pwc_validator": 0
+    },
+    "Q3": {
+      "single": 5,
+      "pwc": 5,
+      "pwc_validator": 5
+    },
+    "Q4": {
+      "single": 5,
+      "pwc": 4,
+      "pwc_validator": 5
+    },
+    "Q5": {
+      "single": 5,
+      "pwc": 5,
+      "pwc_validator": 5
+    },
+    "Q6": {
+      "single": 5,
+      "pwc": 4,
+      "pwc_validator": 3
+    }
+  },
+  "reviewed_totals": {
+    "single": 30,
+    "pwc": 26,
+    "pwc_validator": 23
+  },
+  "defensible_but_not_counted": {
+    "Q2_fisher_formula_answers": 4,
+    "reason": "8.61% is a documented Fisher-formula interpretation, while the fixed criterion expected the 9.2 percentage-point difference."
+  },
+  "parallel_speedup": {
+    "Q1": 1.3666877654302538,
+    "Q5": 1.5970653638296748
+  },
+  "critic_false_accepts": 0
+}
