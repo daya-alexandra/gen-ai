@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+*.tmp
+tmp*/
+rag_eval_*/
+rag_api_test_*/
+lab3_results.zip
