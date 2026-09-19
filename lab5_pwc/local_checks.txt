@@ -1,0 +1,16 @@
+test_controlled_validator_experiment (test_lab.PWCTests.test_controlled_validator_experiment) ... ok
+test_critic_receives_no_worker_trace (test_lab.PWCTests.test_critic_receives_no_worker_trace) ... ok
+test_false_accept_metric_keeps_raw_true_even_if_inconsistent (test_lab.PWCTests.test_false_accept_metric_keeps_raw_true_even_if_inconsistent) ... ok
+test_full_counts_real_repeats_resume_and_verification (test_lab.PWCTests.test_full_counts_real_repeats_resume_and_verification) ... ok
+test_inconsistent_verdict_not_accepted_by_orchestrator (test_lab.PWCTests.test_inconsistent_verdict_not_accepted_by_orchestrator) ... ok
+test_levels_preserve_dependencies (test_lab.PWCTests.test_levels_preserve_dependencies) ... ok
+test_phantom_tools_and_invalid_dependencies (test_lab.PWCTests.test_phantom_tools_and_invalid_dependencies) ... ok
+test_rework_invalidates_downstream_answers_only (test_lab.PWCTests.test_rework_invalidates_downstream_answers_only) ... ok
+test_unsupported_cumulative_inflation_is_valid_refusal (test_lab.PWCTests.test_unsupported_cumulative_inflation_is_valid_refusal) ... ok
+test_validator_replans_before_any_worker (test_lab.PWCTests.test_validator_replans_before_any_worker) ... ok
+test_workers_concurrent_and_only_see_declared_dependencies (test_lab.PWCTests.test_workers_concurrent_and_only_see_declared_dependencies) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 4.612s
+
+OK
