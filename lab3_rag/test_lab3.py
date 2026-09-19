@@ -1,9 +1,11 @@
 """Офлайн-проверки; ответы FakeAPI не являются экспериментом DeepSeek."""
 import copy
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from pydantic import ValidationError
 from eval import run_eval
@@ -11,6 +13,7 @@ from pipeline import generate, check_citations
 from rag_core import (ROOT, BM25, Chunk, boundary_spans, fixed_spans, hit_rate,
                       load_corpus, load_gold, read, dump)
 from schema import RAGAnswer
+from llm_client import Run
 from verify_results import verify
 
 
@@ -31,6 +34,19 @@ class FakeAPI:
 
 
 class RagTests(unittest.TestCase):
+    def test_budget_blocks_before_request_with_existing_dotenv(self):
+        fake = FakeAPI()
+        with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, {'LLM_BUDGET_USD': '0'}):
+            project = Path(d) / 'project'
+            project.mkdir()
+            (project / '.env').write_text('LLM_BUDGET_USD=1\n', encoding='utf-8')
+            with patch('llm_client.ROOT', project):
+                run = Run(Path(d) / 'output', {}, transport=fake)
+            with self.assertRaises(RuntimeError):
+                run.create(stage='unit', messages=[{'role':'user','content':'{}'}], response_model=RAGAnswer)
+            self.assertEqual(fake.calls, 0)
+            self.assertEqual(os.environ['LLM_BUDGET_USD'], '0')
+
     def test_corpus_and_gold_requirements(self):
         docs=load_corpus(ROOT/'data');gold=load_gold(ROOT/'gold.json',docs)
         self.assertEqual(len(docs),5)
