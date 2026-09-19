@@ -1,0 +1,43 @@
+{
+  "run_kind": "llm_api",
+  "model": "deepseek-flash",
+  "strategy": "random",
+  "count": 50,
+  "city_counts": {
+    "Москва": 6,
+    "Санкт-Петербург": 9,
+    "Новосибирск": 3,
+    "Екатеринбург": 7,
+    "Казань": 4,
+    "Нижний Новгород": 4,
+    "Самара": 5,
+    "Краснодар": 2,
+    "Красноярск": 6,
+    "Воронеж": 4
+  },
+  "speciality_counts": {
+    "Инженер": 5,
+    "Программист": 4,
+    "Учитель": 0,
+    "Экономист": 0,
+    "Бухгалтер": 15,
+    "Менеджер по персоналу": 3,
+    "Маркетолог": 15,
+    "Специалист по логистике": 8
+  },
+  "max_city_share": 0.18,
+  "max_speciality_share": 0.3,
+  "specialities_present": 6,
+  "duplicate_names": 1,
+  "validation_error_events": 0,
+  "custom_validator_error_events": 0,
+  "custom_error_types": {},
+  "seed_mismatches": 0,
+  "api_calls": 50,
+  "api_errors": 0,
+  "prompt_tokens_observed": 48772,
+  "completion_tokens_observed": 4555,
+  "responses_without_usage": 0,
+  "execution_seconds": 54.375,
+  "meets_good_criteria": true
+}
