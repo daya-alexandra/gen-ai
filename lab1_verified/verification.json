@@ -1,0 +1,182 @@
+{
+  "status": "passed",
+  "scope": "offline audit of supplied experiment files",
+  "api_calls_made_by_this_verification": 0,
+  "runs": {
+    "random": {
+      "status": "passed",
+      "run_id": "fffa8696-a1ad-4dc4-ba83-2dc2e3e6a8ca",
+      "metrics": {
+        "run_kind": "llm_api",
+        "model": "deepseek-flash",
+        "strategy": "random",
+        "count": 50,
+        "city_counts": {
+          "Москва": 6,
+          "Санкт-Петербург": 9,
+          "Новосибирск": 3,
+          "Екатеринбург": 7,
+          "Казань": 4,
+          "Нижний Новгород": 4,
+          "Самара": 5,
+          "Краснодар": 2,
+          "Красноярск": 6,
+          "Воронеж": 4
+        },
+        "speciality_counts": {
+          "Инженер": 5,
+          "Программист": 4,
+          "Учитель": 0,
+          "Экономист": 0,
+          "Бухгалтер": 15,
+          "Менеджер по персоналу": 3,
+          "Маркетолог": 15,
+          "Специалист по логистике": 8
+        },
+        "max_city_share": 0.18,
+        "max_speciality_share": 0.3,
+        "specialities_present": 6,
+        "duplicate_names": 1,
+        "validation_error_events": 0,
+        "custom_validator_error_events": 0,
+        "custom_error_types": {},
+        "seed_mismatches": 0,
+        "api_calls": 50,
+        "api_errors": 0,
+        "prompt_tokens_observed": 48772,
+        "completion_tokens_observed": 4555,
+        "responses_without_usage": 0,
+        "execution_seconds": 54.375,
+        "meets_good_criteria": true
+      },
+      "checks": [
+        "Pydantic schema",
+        "CSV/checkpoint/raw-answer equality",
+        "source SHA-256",
+        "city schedule",
+        "event chronology",
+        "response ID uniqueness",
+        "usage totals",
+        "saved metrics"
+      ],
+      "age_counts": {
+        "29": 5,
+        "31": 2,
+        "34": 31,
+        "36": 1,
+        "37": 1,
+        "38": 3,
+        "41": 5,
+        "47": 2
+      },
+      "courses": {
+        "Анализ данных": 17,
+        "Python для автоматизации": 3,
+        "Управление проектами": 6,
+        "Цифровой маркетинг": 6,
+        "Финансовый анализ": 15,
+        "Управление персоналом": 3
+      },
+      "duplicate_full_records": 0,
+      "missing_specialities": [
+        "Учитель",
+        "Экономист"
+      ],
+      "original_result_sha256": {
+        "applications.csv": "cc624620281d54aaf7d5e15bdbd80b55425a3283d0c695dfb08c9c3acd9341be",
+        "checkpoint.json": "98ce21c140e86f9f4f377dd6bcf7f4cb1db7e8de1a0258e6c5f927373cb190e4",
+        "metrics.json": "e39d4b6c0b6abea4a4baa554888c0751335e69b742c8d6d3be63b4a832b9c27f",
+        "run.json": "bdfe91dd23fe344f513eda183b10307d7e5e6b78d6f4abb9489207caf93526c6",
+        "trace.jsonl": "54a579d792ff4e14abc47183c8043c7e4033afbd5a5b89ee10c1486198a7bf3b"
+      }
+    },
+    "stratified": {
+      "status": "passed",
+      "run_id": "ff05fa24-0d74-4097-9e7b-4c9f7f379e11",
+      "metrics": {
+        "run_kind": "llm_api",
+        "model": "deepseek-flash",
+        "strategy": "stratified",
+        "count": 50,
+        "city_counts": {
+          "Москва": 5,
+          "Санкт-Петербург": 5,
+          "Новосибирск": 5,
+          "Екатеринбург": 5,
+          "Казань": 5,
+          "Нижний Новгород": 5,
+          "Самара": 5,
+          "Краснодар": 5,
+          "Красноярск": 5,
+          "Воронеж": 5
+        },
+        "speciality_counts": {
+          "Инженер": 2,
+          "Программист": 2,
+          "Учитель": 0,
+          "Экономист": 2,
+          "Бухгалтер": 14,
+          "Менеджер по персоналу": 6,
+          "Маркетолог": 8,
+          "Специалист по логистике": 16
+        },
+        "max_city_share": 0.1,
+        "max_speciality_share": 0.32,
+        "specialities_present": 7,
+        "duplicate_names": 5,
+        "validation_error_events": 0,
+        "custom_validator_error_events": 0,
+        "custom_error_types": {},
+        "seed_mismatches": 0,
+        "api_calls": 50,
+        "api_errors": 0,
+        "prompt_tokens_observed": 48772,
+        "completion_tokens_observed": 4567,
+        "responses_without_usage": 0,
+        "execution_seconds": 55.068,
+        "meets_good_criteria": true
+      },
+      "checks": [
+        "Pydantic schema",
+        "CSV/checkpoint/raw-answer equality",
+        "source SHA-256",
+        "city schedule",
+        "event chronology",
+        "response ID uniqueness",
+        "usage totals",
+        "saved metrics"
+      ],
+      "age_counts": {
+        "29": 3,
+        "34": 32,
+        "38": 6,
+        "41": 6,
+        "47": 3
+      },
+      "courses": {
+        "Анализ данных": 16,
+        "Python для автоматизации": 2,
+        "Управление проектами": 7,
+        "Цифровой маркетинг": 4,
+        "Финансовый анализ": 15,
+        "Управление персоналом": 6
+      },
+      "duplicate_full_records": 0,
+      "missing_specialities": [
+        "Учитель"
+      ],
+      "original_result_sha256": {
+        "applications.csv": "a656fc7fae93450572c87a16cae42c805b3f8ab0a710531435af2f19a4b09b3e",
+        "checkpoint.json": "81944c755e9fd8b9da088ac6c194f1575768ed9375495bd6b4006ebcf4b18422",
+        "metrics.json": "ec550f43a172d8f605b0454e42f51c744f1e62b570353bded4d124435aaacb8b",
+        "run.json": "dea903ce85a791a663c7b7f89f7799688bc76066233ada8a4eb34aacf63147c4",
+        "trace.jsonl": "a655dd9e505409be74315f8ad9c77cf8143299e9ef682cbf531c3009d2058a86"
+      }
+    }
+  },
+  "limits": [
+    "Provider billing and server-side authenticity are not independently verified.",
+    "District geography and profession/course plausibility are not validated by the schema.",
+    "Only one run per strategy; no causal/statistical significance claim."
+  ]
+}
