@@ -1,0 +1,8 @@
+{
+  "retrieval_run_completed": true,
+  "different_document_hit_questions": 0,
+  "different_evidence_questions": 7,
+  "at_least_two_document_hit_difference_examples": false,
+  "at_least_two_context_difference_examples": true,
+  "api_generation_completed": false
+}
