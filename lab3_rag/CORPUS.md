@@ -2,7 +2,7 @@
 
 Пять авторских документов о подготовленном учебном проекте анализа отзывов. Это новая техническая документация, написанная с помощью ИИ 19.09.2026 по коду и инструкциям второй лабораторной; это не выгрузка чужой корпоративной базы и не реальные клиентские сообщения.
 
-Источники фактов: опубликованные [код и инструкция второй работы](../lab2_text/README.md), [схемы](../lab2_text/schema.py), [конвейер](../lab2_text/pipeline.py), [клиент](../lab2_text/llm_client.py), [проверка](../lab2_text/verify_results.py). Корпус фиксирует состояние этой реализации и не обновляется автоматически вслед за исходным кодом.
+Источники фактов: опубликованные [код и инструкция второй работы](https://github.com/daya-alexandra/gen-ai/blob/main/lab2_text/README.md), [схемы](https://github.com/daya-alexandra/gen-ai/blob/main/lab2_text/schema.py), [конвейер](https://github.com/daya-alexandra/gen-ai/blob/main/lab2_text/pipeline.py), [клиент](https://github.com/daya-alexandra/gen-ai/blob/main/lab2_text/llm_client.py), [проверка](https://github.com/daya-alexandra/gen-ai/blob/main/lab2_text/verify_results.py). Корпус фиксирует состояние этой реализации и не обновляется автоматически вслед за исходным кодом.
 
 | Источник | Тема | Слов | Символов |
 |---|---|---:|---:|
