@@ -1,0 +1,23 @@
+{
+  "review_status": "verified",
+  "raw_output_unchanged": true,
+  "source_archive_sha256": "efcdbf6572fe44a74744b17a8739337a55d6b145022196831ebfdea44d833e85",
+  "run_status": "completed",
+  "run_kind": "llm_api",
+  "model": "deepseek-flash",
+  "api_responses": 24,
+  "prompt_tokens": 38808,
+  "completion_tokens": 1955,
+  "estimated_usd_interval": [
+    0.002271384,
+    0.004542768
+  ],
+  "original_automatic_score": "7/10",
+  "reviewed_score": "10/10",
+  "false_negative_ids": [
+    6,
+    8,
+    9
+  ],
+  "false_negative_reason": "Unicode minus and grouped thousands were not normalized by the original number parser."
+}
