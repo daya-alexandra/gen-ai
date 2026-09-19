@@ -1,0 +1,21 @@
+test_all_six_comparison_metrics_and_delegation (test_lab.LabTests.test_all_six_comparison_metrics_and_delegation) ... ok
+test_auth_errors_are_not_leaked_or_retried (test_lab.LabTests.test_auth_errors_are_not_leaked_or_retried) ... ok
+test_bootstrap_copies_key_but_preserves_new_budget (test_lab.LabTests.test_bootstrap_copies_key_but_preserves_new_budget) ... ok
+test_bootstrap_never_overwrites_existing_env (test_lab.LabTests.test_bootstrap_never_overwrites_existing_env) ... ok
+test_budget_blocks_before_transport_and_env_is_ignored_for_test (test_lab.LabTests.test_budget_blocks_before_transport_and_env_is_ignored_for_test) ... ok
+test_calculator_blocks_code_and_extreme_work (test_lab.LabTests.test_calculator_blocks_code_and_extreme_work) ... ok
+test_complete_pipeline_and_tamper_detection (test_lab.LabTests.test_complete_pipeline_and_tamper_detection) ... ok
+test_config_changes_block_resume (test_lab.LabTests.test_config_changes_block_resume) ... ok
+test_experiment_lock_blocks_second_writer (test_lab.LabTests.test_experiment_lock_blocks_second_writer) ... ok
+test_interrupted_agent_reuses_first_api_response (test_lab.LabTests.test_interrupted_agent_reuses_first_api_response) ... ok
+test_no_future_fallback_and_month_end (test_lab.LabTests.test_no_future_fallback_and_month_end) ... ok
+test_ratio_zero_is_explicit (test_lab.LabTests.test_ratio_zero_is_explicit) ... ok
+test_resume_reuses_api_but_repeat_id_is_fresh (test_lab.LabTests.test_resume_reuses_api_but_repeat_id_is_fresh) ... ok
+test_schema_and_tool_errors_remain_observations (test_lab.LabTests.test_schema_and_tool_errors_remain_observations) ... ok
+test_synthetic_marker_propagates (test_lab.LabTests.test_synthetic_marker_propagates) ... ok
+test_wrong_answer_is_not_passed_for_tool_presence (test_lab.LabTests.test_wrong_answer_is_not_passed_for_tool_presence) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.140s
+
+OK
