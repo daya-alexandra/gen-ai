@@ -1,0 +1,15 @@
+{
+  "stage": "A:18",
+  "response_id": "9f458a78-32bd-4b5e-aa0d-c725ab1cbf05",
+  "value": {
+    "status": "answered",
+    "answer": "Команда Copy-Item принадлежит PowerShell и в обычной командной строке не распознаётся. В Windows CMD для копирования используется команда copy. Смешивание примеров для разных оболочек приводит к ошибке, которая не связана ни с Python, ни с ключом API.",
+    "confidence": 0.95,
+    "citations": [
+      {
+        "chunk_id": "doc_05_handover__0",
+        "quote": "В Windows CMD для копирования используется команда copy. Команда Copy-Item принадлежит PowerShell и в обычной командной строке не распознаётся."
+      }
+    ]
+  }
+}
