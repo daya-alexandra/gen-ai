@@ -1,0 +1,22 @@
+[
+  {"id":"R01","category":"schedule","urgency":[3,5],"expected_sources":["academic_schedule"],"required_tools":["search_rules","get_contact","calculate_days"],"requested_deadline":"2026-10-01","date_range":["2026-09-19","2026-10-01"],"sensitive":false},
+  {"id":"R02","category":"schedule","urgency":[3,5],"expected_sources":["academic_schedule"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":false},
+  {"id":"R03","category":"schedule","urgency":[1,3],"expected_sources":["academic_schedule"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":false},
+  {"id":"R04","category":"schedule","urgency":[2,4],"expected_sources":["academic_schedule"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":false},
+  {"id":"R05","category":"documents","urgency":[1,3],"expected_sources":["documents"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":false},
+  {"id":"R06","category":"documents","urgency":[2,4],"expected_sources":["documents"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":false},
+  {"id":"R07","category":"documents","urgency":[4,5],"expected_sources":["documents"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":true},
+  {"id":"R08","category":"documents","urgency":[2,4],"expected_sources":["documents"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":true},
+  {"id":"R09","category":"tuition","urgency":[1,3],"expected_sources":["tuition"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":false},
+  {"id":"R10","category":"tuition","urgency":[3,5],"expected_sources":["tuition"],"required_tools":["search_rules","get_contact","calculate_days"],"requested_deadline":"2026-10-10","date_range":["2026-09-25","2026-10-10"],"sensitive":false},
+  {"id":"R11","category":"tuition","urgency":[1,3],"expected_sources":["tuition"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":false},
+  {"id":"R12","category":"tuition","urgency":[2,4],"expected_sources":["tuition"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":false},
+  {"id":"R13","category":"academic_leave","urgency":[2,4],"expected_sources":["academic_leave"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":true},
+  {"id":"R14","category":"academic_leave","urgency":[2,4],"expected_sources":["academic_leave"],"required_tools":["search_rules","get_contact","calculate_days"],"requested_deadline":"2026-10-06","date_range":["2026-09-15","2026-10-06"],"sensitive":false},
+  {"id":"R15","category":"academic_leave","urgency":[3,5],"expected_sources":["academic_leave"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":false},
+  {"id":"R16","category":"academic_leave","urgency":[2,4],"expected_sources":["academic_leave"],"required_tools":["search_rules","get_contact","calculate_days"],"requested_deadline":"2026-10-05","date_range":["2026-09-19","2026-10-05"],"sensitive":false},
+  {"id":"R17","category":"technical","urgency":[3,5],"expected_sources":["technical_support"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":true},
+  {"id":"R18","category":"technical","urgency":[2,4],"expected_sources":["technical_support"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":false},
+  {"id":"R19","category":"technical","urgency":[4,5],"expected_sources":["technical_support"],"required_tools":["search_rules","get_contact"],"requested_deadline":"2026-09-19","sensitive":false},
+  {"id":"R20","category":"technical","urgency":[3,5],"expected_sources":["technical_support"],"required_tools":["search_rules","get_contact"],"requested_deadline":null,"sensitive":false}
+]
