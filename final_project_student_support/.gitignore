@@ -1,0 +1,6 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+output/
+final_project_results.zip
