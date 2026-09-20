@@ -8,7 +8,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
-from runtime import ApiRun, TARIFF, dump, events, usage_cost
+from runtime import ApiRun, TARIFF, dump, events, read, usage_cost
 
 ROOT = Path(__file__).resolve().parent
 OWN_TEXT = (
@@ -51,13 +51,19 @@ def load_headlines() -> list[dict]:
 
 
 def api_totals(output: Path) -> dict:
-    log = [item for item in events(output / "api_trace.jsonl") if item.get("response_id")]
-    upper = sum(usage_cost(item.get("usage")) or 0 for item in log)
+    attempts = [item for item in events(output / "api_trace.jsonl") if item.get("response_id")]
+    valid_by_stage = {
+        item["stage"]: item for item in attempts if item.get("status") == "valid"
+    }
+    known_usage = [item for item in attempts if usage_cost(item.get("usage")) is not None]
+    ledger = read(output / "budget.json")
+    upper = sum(item.get("reserved_usd", 0) for item in ledger.values())
     return {
-        "api_responses": len(log),
-        "prompt_tokens": sum((item.get("usage") or {}).get("prompt_tokens", 0) for item in log),
-        "completion_tokens": sum((item.get("usage") or {}).get("completion_tokens", 0) for item in log),
-        "missing_usage": sum(usage_cost(item.get("usage")) is None for item in log),
+        "api_responses": len(valid_by_stage),
+        "api_attempts": len(attempts),
+        "prompt_tokens": sum((item.get("usage") or {}).get("prompt_tokens", 0) for item in known_usage),
+        "completion_tokens": sum((item.get("usage") or {}).get("completion_tokens", 0) for item in known_usage),
+        "missing_usage": len(attempts) - len(known_usage),
         "estimated_usd_interval": [upper * TARIFF["off_peak_multiplier"], upper],
     }
 
@@ -135,7 +141,7 @@ def write_report(output: Path, result: dict) -> None:
         "",
         "System-промпт заметно влияет и на формат, и на тон ответа. Даже temperature=0 не следует считать математической гарантией одинакового результата: провайдер и реализация декодирования могут меняться. Для числового production-вывода нужна структурированная схема, а не регулярное выражение — это ограничение явно видно в оценщике заголовков.",
         "",
-        f"Получено {totals['api_responses']} ответов API, {totals['prompt_tokens']} входных и {totals['completion_tokens']} выходных токенов. Расчётная стоимость: ${totals['estimated_usd_interval'][0]:.5f}–${totals['estimated_usd_interval'][1]:.5f}; серверный биллинг отдельно не проверялся.",
+        f"Сформировано {totals['api_responses']} пригодных результатов за {totals['api_attempts']} API-попыток, учтено {totals['prompt_tokens']} входных и {totals['completion_tokens']} выходных токенов. Расчётная стоимость: ${totals['estimated_usd_interval'][0]:.5f}–${totals['estimated_usd_interval'][1]:.5f}; серверный биллинг отдельно не проверялся.",
         "",
         "Полные ответы находятся в JSON, исходные события — в api_trace.jsonl, графики — в PNG. Данные не редактировались вручную после API-прогона.",
     ]
@@ -186,8 +192,8 @@ def execute(output="output", transport=None) -> dict:
             {"role": "user", "content": task},
         ]
         ladder = {
-            "zero_shot": run.call("prompt/ladder/zero", [{"role": "user", "content": task}], 0.3, 220),
-            "role": run.call("prompt/ladder/role", [{"role": "system", "content": role}, {"role": "user", "content": task}], 0.3, 220),
+            "zero_shot": run.call("prompt/ladder/zero", [{"role": "user", "content": task}], 0.3, 800),
+            "role": run.call("prompt/ladder/role", [{"role": "system", "content": role}, {"role": "user", "content": task}], 0.3, 800),
             "format": run.call("prompt/ladder/format", [{"role": "system", "content": format_prompt}, {"role": "user", "content": task}], 0.3, 220),
             "fewshot": run.call("prompt/ladder/fewshot", fewshot, 0.3, 220),
         }
@@ -200,7 +206,7 @@ def execute(output="output", transport=None) -> dict:
 
         persona_question = "Стоит ли студенту с 50 000 рублей покупать акции российских банков?"
         persona_results = {
-            name: run.call(f"prompt/persona/{name}", [{"role": "system", "content": system}, {"role": "user", "content": persona_question}], 0.7, 350)
+            name: run.call(f"prompt/persona/{name}", [{"role": "system", "content": system}, {"role": "user", "content": persona_question}], 0.7, 1200)
             for name, system in PERSONAS.items()
         }
 

@@ -19,6 +19,32 @@ TARIFF = {
     "off_peak_multiplier": 0.5,
 }
 
+# Точная сигнатура первой опубликованной версии. Совместимость разрешена только
+# для неё: входной CSV, модель, тариф и адрес API должны остаться прежними.
+LEGACY_RELEASE_FILES = {
+    "bootstrap.py": "6b9ce4d6d1d383e1fd237a6f83928b6b4ec6085b05aafdeac8fbce93d03329c8",
+    "collect_results.py": "2f94be861724ee32d00b52091ad1aaefda4fe147e4a72978215f5fe4e1959bf3",
+    "experiments.py": "a5fa19122651d97e890eee103839151cf6e995570b76ee3b1b35542dd143c5e5",
+    "run_lab.py": "e19d1edf947db869116f5e7fcce2e81c48d46891a3eec95c68624cb3097cbbab",
+    "runtime.py": "fae7d3625a16a651ffbfb57c7fc23e1ca328ff15d6949b97161fb990b586f8b8",
+    "test_lab.py": "e7baa69fcd982715ce10677b33c103d445a3814acdcd849503c38daf30b9aad5",
+    "verify_results.py": "f2d5d53785fda58c56e97e1c16e9298b5950dee4727829f37aa2d9af43e3d596",
+    "input/headlines.csv": "dc774d1b34db12fde7a2bb3063aacacec705fca6d6ee7bc48248eec4a81658f2",
+}
+
+# Версия первого исправления: zero-shot/role уже увеличены до 800 токенов,
+# но ответы персон ещё имели прежний предел 350 токенов.
+TOKEN_LIMIT_FIX_FILES = {
+    "bootstrap.py": "6b9ce4d6d1d383e1fd237a6f83928b6b4ec6085b05aafdeac8fbce93d03329c8",
+    "collect_results.py": "2f94be861724ee32d00b52091ad1aaefda4fe147e4a72978215f5fe4e1959bf3",
+    "experiments.py": "ff39b19b237dccc009a3ff9e229a97fc4ebebeda7ec4b1005fae957357bcbee7",
+    "run_lab.py": "e19d1edf947db869116f5e7fcce2e81c48d46891a3eec95c68624cb3097cbbab",
+    "runtime.py": "744f39404fe121cbdadcb847b8e38ac28099a97689bbf04f5d62c7f7fdd47511",
+    "test_lab.py": "4d2ab4190b82efb6f6d8ce16aa38c6d5ac599ca7ff0da76b8f7d7ee1e56cdfba",
+    "verify_results.py": "9828f764716c0bd0454125f11b3ebd1691d611647f37bc3acfffa5c0f68683cb",
+    "input/headlines.csv": "dc774d1b34db12fde7a2bb3063aacacec705fca6d6ee7bc48248eec4a81658f2",
+}
+
 
 def now() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -34,7 +60,14 @@ def dump(path, value) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(path.name + "." + uuid.uuid4().hex + ".tmp")
     tmp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    tmp.replace(path)
+    for attempt in range(7):
+        try:
+            tmp.replace(path)
+            return
+        except PermissionError:
+            if attempt == 6:
+                raise
+            time.sleep(0.05 * (attempt + 1))
 
 
 def read(path):
@@ -51,6 +84,16 @@ def events(path) -> list[dict]:
 def file_hashes() -> dict[str, str]:
     paths = sorted(ROOT.glob("*.py")) + sorted((ROOT / "input").glob("*"))
     return {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+
+
+def compatible_legacy_config(previous: dict, current: dict) -> bool:
+    """Разрешить продолжение только с точно известной исходной версии."""
+    known_files = (LEGACY_RELEASE_FILES, TOKEN_LIMIT_FIX_FILES)
+    if not any(previous.get("files_sha256") == item for item in known_files):
+        return False
+    previous_without_files = {key: value for key, value in previous.items() if key != "files_sha256"}
+    current_without_files = {key: value for key, value in current.items() if key != "files_sha256"}
+    return previous_without_files == current_without_files
 
 
 def usage_cost(usage: dict | None) -> float | None:
@@ -92,7 +135,22 @@ class ApiRun:
         if self.meta_path.exists():
             self.meta = read(self.meta_path)
             if self.meta["config"] != self.config:
-                raise ValueError("Код или входные данные изменились. Выбери новую папку --output.")
+                previous = self.meta["config"]
+                if not compatible_legacy_config(previous, self.config):
+                    raise ValueError("Код или входные данные изменились. Выбери новую папку --output.")
+                compatible = self.meta.setdefault("compatible_cache_configs", [])
+                if previous not in compatible:
+                    compatible.append(previous)
+                self.meta.setdefault("resume_migrations", []).append(
+                    {
+                        "at": now(),
+                        "reason": "increase_generation_token_limits",
+                        "from_files_sha256": previous["files_sha256"],
+                        "to_files_sha256": self.config["files_sha256"],
+                    }
+                )
+                self.meta["config"] = self.config
+                dump(self.meta_path, self.meta)
         else:
             self.meta = {
                 "run_id": str(uuid.uuid4()),
@@ -102,6 +160,7 @@ class ApiRun:
                 "config": self.config,
             }
             dump(self.meta_path, self.meta)
+        self.compatible_cache_configs = self.meta.get("compatible_cache_configs", [])
         self.started = time.perf_counter()
 
     def _log(self, event: dict) -> None:
@@ -159,8 +218,15 @@ class ApiRun:
         }
         key = digest([stage, request, self.config])
         cache = self.output / "cache" / f"{key}.json"
-        if cache.exists():
-            return {**read(cache)["value"], "cache_replay": True, "cache_key": key}
+        for candidate_config in [self.config, *self.compatible_cache_configs]:
+            candidate_key = digest([stage, request, candidate_config])
+            candidate_cache = self.output / "cache" / f"{candidate_key}.json"
+            if candidate_cache.exists():
+                return {
+                    **read(candidate_cache)["value"],
+                    "cache_replay": True,
+                    "cache_key": candidate_key,
+                }
         ticket = self._reserve(request)
         started = time.perf_counter()
         base_event = {
@@ -180,7 +246,19 @@ class ApiRun:
         choice = response["choices"][0]
         text = (choice["message"].get("content") or "").strip()
         if choice.get("finish_reason") != "stop" or not text:
-            self._log({**base_event, "status": "invalid", "response_id": response.get("id")})
+            self._log(
+                {
+                    **base_event,
+                    "status": "invalid",
+                    "response_id": response.get("id"),
+                    "server_model": response.get("model"),
+                    "finish_reason": choice.get("finish_reason"),
+                    "content_chars": len(text),
+                    "usage": usage,
+                    "seconds": time.perf_counter() - started,
+                    "cost_upper_usd": usage_cost(usage),
+                }
+            )
             raise RuntimeError(f"Незавершённый ответ на этапе {stage}; повторный запуск продолжит работу")
         value = {
             "stage": stage,
