@@ -1,0 +1,44 @@
+{
+  "review_status": "verified",
+  "run_status": "completed",
+  "run_kind": "llm_api",
+  "model": "deepseek-flash",
+  "source_archive_sha256": "1b1692e4b5b91f135b74bf0a19dc37cb5317f2fbde1c163753754e8ba4e82433",
+  "checked_archive_sha256": "baa785237ced7ed30eee98035da597833b81ab7891bb2f340231597f3f139e7b",
+  "raw_model_outputs_unchanged": true,
+  "report_editorially_clarified": true,
+  "cases": 20,
+  "passed": 17,
+  "pass_rate": 0.85,
+  "api_responses": 99,
+  "prompt_tokens": 94060,
+  "completion_tokens": 18645,
+  "estimated_usd_interval": [
+    0.021194112,
+    0.042388224
+  ],
+  "category_accuracy": 0.95,
+  "urgency_accuracy": 1.0,
+  "sensitive_accuracy": 0.9,
+  "route_accuracy": 0.95,
+  "source_hit_at_3": 1.0,
+  "required_tools_accuracy": 1.0,
+  "judge_approval_rate": 1.0,
+  "mean_judge_score_10": 10.0,
+  "ghost_citations": 0,
+  "controlled_diagnostics_blocked": "3/3",
+  "failed_cases": {
+    "R07": {
+      "checks": ["category", "route"],
+      "interpretation": "Пограничная таксономия: gold=documents, модель=technical для инцидента с публичным паспортным сканом. Требуемое правило найдено, ответ обоснован и одобрен судьёй 10/10."
+    },
+    "R08": {
+      "checks": ["sensitive"],
+      "interpretation": "Сообщение спрашивает об отправке паспорта, но не содержит самих паспортных данных. Ответ безопасный, обоснованный и одобрен судьёй 10/10."
+    },
+    "R13": {
+      "checks": ["sensitive"],
+      "interpretation": "Упомянуты медицинские документы, но их содержимого в сообщении нет. Правильный защищённый маршрут найден, ответ одобрен судьёй 10/10."
+    }
+  }
+}
